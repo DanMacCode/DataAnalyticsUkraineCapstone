@@ -1,0 +1,1091 @@
+---
+title: "Modeling Refugee Presence Across Europe: Insights from the Ukrainian Crisis and Random Forest Analysis"
+author: "Daniel C. MacLeod"
+bibliography: the_bib.bib
+csl: american-political-science-association.csl
+abstract: >
+  This project proposes a model to evaluate refugee migration flows from Ukraine to European Union countries, addressing the critical question of why refugees go where they go once displacement occurs. Building on established migration theory and advances in machine learning, the model integrates five key causal themes consistently observed in refugee research: accessibility, safety, familiarity, opportunity, and gravity. Drawing from Eurostat, Freedom House, and custom geographic datasets, the model captures monthly refugee flows, economic conditions, existing diaspora networks, political freedom scores, and proximity to Ukraine. To account for complex interactions, temporal variability, and nonlinear relationships across these factors, ensemble methods will be employed to pursue these effects. This approach combines the structural logic of gravity models with the flexibility of machine learning to produce a forecasting tool capable of supporting host nations in anticipatory policy decisions. 
+
+papersize: letter
+
+margin-left: 1in
+margin-right: 1in
+margin-top: 1in
+margin-bottom: 1in
+cap-location: top
+
+format: 
+  pdf:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    linestretch: 2
+    
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+\clearpage
+
+\raggedright
+
+\setlength{\parindent}{20pt}
+
+# Introduction
+
+Diaspora is a phenomenon of growing global importance, as rising tensions, international conflicts, and domestic crises drive refugees from their homes in increasing frequency. While the causes of forced migration have been widely studied, far less attention has been given to a question of arguably equal importance to host nations: why do refugees go where they go? Understanding the factors that shape refugee destination choices is critical for governments seeking to prepare for inflows, allocate resources effectively, and manage the resulting political and social strain.
+
+The purpose of this research is not to reexamine the conditions that force people to flee their countries of origin, but rather to model where they go once they do. Understanding patterns in refugee movement empowers stakeholders to respond preemptively to incoming waves of refugees. Refugee flows have affected regions as disparate as the Middle East to Europe. This research will consider the various stems of crisis: domestic conflict, economic collapse, and international war. Better forecasting tools can help host nations prepare to both serve their own citizens while also moderating its support to displaced populations.
+
+The research focuses on five key factors that shape where refugees choose to go: accessibility, safety, familiarity, opportunity, and gravity. Accessibility refers to how easily refugees can reach a country, including geographic distance, visa rules, and border controls. Safety involves the level of protection from violence and the strength of legal safeguards in the host country. Familiarity includes shared language, religion, or culture. Opportunity captures economic factors like job availability, quality of education, and state sponsored services. Gravity refers to the pull of existing diaspora communities or previous refugee flows, which have been found to greatly influence future movements. Each of these factors operates differently depending on the type and phase of the crisis, and this research is designed to account and weigh these differences.
+
+The ultimate goal is to answer the research question: *“How do aspects of political freedom in Ukraine affect refugee migration to EU countries, given the aspects of those countries and the five main refugee drivers?”* By developing a generalizable, empirically grounded model that integrates these dimensions, this research seeks to provide governments with a pragmatic forecasting tool, one that can help anticipate refugee inflows and make informed policy decisions before the next crisis arrives.
+
+# Literature Review
+
+Classic migration theory establishes the push-pull models of migration, where the detracting push factors compel departures and the attractive pull factors determine the destination choice. Recent research has also derived primary, secondary, and nascent migration as key stages in the process. Nascent migration precedes primary migration, characterized by middle to upper class citizens leaving for better opportunities abroad. Primary migration is the immediate flow of refugees with safety and accessibility foremost in consideration[@frith2019spatial], corresponding with immediate state collapse or conflict. Secondary migration is marked by lower crisis intensity, or when refugees who initially fled to a nearby country during primary migration are now able to prioritize opportunity over safety and move onward to a second destination. The push-pull model and the three categories of migration refine the research to understand how means, timing, and urgency impact the balanced pursuit of safety and opportunity.
+
+Recent refugee research converges on five key causal themes: accessibility, safety, familiarity, opportunity, and gravity. All pull factors will fall under one of these five categories. By analyzing these pillars, foundational assumptions begin to manifest. Distance decay is described as a refugee’s preference for nearer destinations when facing initial displacement [@hierro2024social]. The safety pull is marked by political stability, rule of law, low crime and terrorism, which are immediately enticing for refugees [@frith2019spatial]. A Syrian study fortified the well-established notion that security threats as measured by terrorism, crime and conflict are inversely related to refugee flow. Cultural proximity, marked by shared language, religion, and history fall under the theme of familiarity, and can be observed in the Syrian refugee crisis, where 2.7 million of 4.4 million registered refugees have landed in Turkey [@unhcr2025syria].
+
+Gravity models are increasingly popular and have been used to analyze refugee flow from Venezuela, Syria, and Ukraine. Gravity models (inspired by Newtonian gravity and are structured like a regression) successfully implement variables that include: existing diaspora, proportionality of population, physical distance, and social networks. Gravity models also control for cultural proximity (shared history, religion, etc.), opportunity, anti-immigration sentiment, and others [@hierro2024social]. With sufficient data gravity models’ lay a baseline which can then be refined by more control variables or by being integrated into ensemble methods [@lanati2024south]. Social network theory is closely interwoven with the theory behind gravity models, being that diaspora communities created linkages which facilitate yet more movement [@greene2023expanding]. Gravity is often boosted when augmented with social ties in a social network considerate gravity model.
+
+This research paper will group social networks, social gravity, diaspora, and cumulative flows under the singular term “gravity”. Within this context, diaspora and cumulative flows refer to existing migrant and refugee communities’ influence (or pull) on new refugees. In several recent studies, gravity models appear especially strong. In the case of Ukrainian refugees, both prewar diaspora communities and newly accumulated refugee populations exert a measurable pull on subsequent flows. A 1% increase in prewar social networks leads to a 0.25% rise in monthly refugee inflows, while a 1% increase in accumulated refugee migration corresponds to a 0.36% rise. In this case, while pre-existing communities shape early movement, the gravitational influence of new refugee networks grows over time and can surpass that of older diasporas. This statistically significant finding lends credence to gravity models’ robust nature and why it is a practical starting point. Policy responsiveness can redirect asylum flows in measurable and often immediate ways [@guichard2024externalities].
+
+The research has also developed to analyze how the world has reacted to certain crises. For example, when the Russo-Ukraine conflict began, the EU issued temporary protection orders to support Ukrainian refugees, and as the Syrian crisis begins to evolve, studies have also met the shift in policy with the analysis required to derive a line of effects. For example, studies following Germany’s efforts to take in Syrian refugees have found that reductions in processing time significantly increased asylum applications. One simulation showed that Germany’s drop in average processing time, from 15.7 to 9.4 months, accounted for 13.5% of the rise in applications lodged there, with a corresponding 7.9% drop in applications to other European countries [@bertoli2022asylum].
+
+The methodology used to analyze refugee crises has gone through its own evolution over the last three decades. Originally constrained by comparatively small datasets, researchers primarily employed cross sectional, time series analysis [@schmeidl1997forced], panel regression analysis and OLS and logistic regression. Studies like [@neumayer2005bogus] exemplified this early approach, linking asylum applications to political oppression and economic conditions through country-year regressions. These methods were pioneering in the 1990s and 2000s, but they had limitations. Early studies were limited by high dimensionality and under reported data. As detailed UNHCR data became available and computing power grew researchers were enabled by more sophisticated models to gather higher dimensions of these relationships.
+
+The aforementioned gravity models marked a turning point in refugee research, particularly when coupled with models like the Poisson Pseudo Maximum Likelihood (PPML). These models were previously used to model trade flow, but their ability to model bilateral flows proved useful for this sector of research. PPML offers the ability to account for origin and destination fixed effects and has been used to model determinants of asylum applications to the EU as recently as 2023 [@diasio2024determinants]. Gravity modeling stands in contrast to prior research, in that it abides by theory of mass and distance, while also being able to deal well with overdispersion, heteroskedasticity, and keeps zeros in the data by assigning count values to countries which receive no refugees. These are all key elements that build a robust starting point capable of reducing bias, preserving the integrity of the dataset, and yielding more accurate and theoretically grounded estimates of refugee flows.
+
+Other studies have acknowledged the complexity of multistage movement and the diaspora characterizations of primary versus secondary migration. For example, researchers split analysis of Ukrainian migrants into sub-periods (initial versus sustained) and found that determinants shifted over time. Many studies neglect temporal shifts and rather focus on the immediate time of the research.
+
+An interesting approach is marked by a Swedish study on Syrian refugees that assessed the direct impact of policy change on asylum flows. Using a quasi-experimental interrupted time series design with multiple control groups, the researchers examined how Sweden’s 2013 decision to grant permanent residence to Syrians affected application volumes [@andersson2022asylum]. By combining high-frequency national data with UNHCR figures and comparing flows from other origin countries and Germany, the study isolated the policy’s effect from broader conflict trends. It stands as a rare causal inference effort in refugee research and shows that even in a field somewhat saturated with gravity models, novel approaches still push the boundaries of how we understand displacement dynamics. Another creative methodological approach includes Bayesian Hierarchical Clustering [@cottier2024bayesian] and Agent Based Modeling (ABM) which can project probability distributions in the face of unseen data to make predictions and enable scenario analysis respectively. The ABM (when using the FLEE simulation framework) is a particularly novel approach allowing simulations of open and closed camps and borders which was able to match 75% of destinations in Africa over a twelve day simulation period [@suleimenova2017simulation]. These are notable evolutionary offshoots of research which branch away from strict equation based modeling and pivot to computational simulations.
+
+The last five years have been marked by rapid developments in machine learning, which have increasingly been applied to refugee study. Complex nonlinear multidimensional data can now be handled by models such as Random Forests, gradient boosting, and neural networks, allowing researchers to detect interactions and relationships that simpler models might miss [@micevska2021revisiting]. When paired with traditional approaches, these techniques offer a powerful balance between prediction and explanation. This integration is exemplified in ensemble methods and in tools like the 2025 World Bank AI-powered refugee forecasting model (World Bank 2025). Ensemble methods refer to modeling approaches that combine multiple algorithms, each optimized for a specific aspect or stage of the problem. Rather than relying on a single model to handle all tasks, ensemble systems assign different models to different components of the pipeline, leveraging their respective strengths and synergizing their outputs to produce more robust, accurate, and generalizable results [@frith2019spatial].
+
+The greatest advance across these methodologies is the fact that the data and computational advances are only improving. ACLED has vastly expanded and refined conflict data while EUROSTAT now provides monthly asylum statistics allowing research to geo-reference and gain near real time data encompassing millions of datapoints which did not exist in the early years of study. However, while the future of research in this field is promising, there are coverage gaps in the existing literature.
+
+Despite researchers having significantly advanced our understanding of refugee destination patterns, through the development of gravity models, social network theory, and the classification of migration phases, some key context is often left out. Gravity models, while widely used, often perform inconsistently in low-data or high-volatility environments, limiting use in less-documented crises. Traditional push-pull theory struggles to account for nascent decline, where early, often elite, migrants respond to subtle precursors of collapse. And despite advances in causal inference and machine learning, most forecasting models remain tailored to individual case studies, lacking potential uses in forecasting.
+
+Case studies further reinforce that no single factor dominates across all contexts. Gravity mechanisms are pronounced in the Ukrainian crisis, where cumulative networks amplified flows over time. In contrast, economic opportunity played a more central role in Venezuelan secondary migration, and accessibility shaped early movements during the Syrian conflict. The five variables are largely present across all cases, but their intensity varies by region. These variations suggest that predictive modeling must be context-aware, modular, and capable of adapting to shifting crisis dynamics.
+
+This paper is a case study on Ukrainian migration into EU countries which have signed the temprorary protection order. This study uses attempts to responds directly to previous gaps in researchg by integrating thee five most consistently observed causal themes: accessibility, safety, opportunity, and gravity, and marrying them with political freedom scores. This case study will use a target variable of total presence of migrants to avoid the volatility of monthly predictions. For this reason, it is expected that the model will be best effective at post intial modeling (i.e., mid to late primary and secondary migration). This model is intended to be transferable across crises and usable by host nations for anticipatory planning. The model uses iterative Random Forest Modeling from the Ranger Package to identify the most valuable pull predictors while also preserving political push facors. The goal is to bridge the gap between explanatory insight and implimentable forecasting, contributing to both established theory and practical policy application.
+
+# Data and Methods
+
+**Data**
+
+This project draws upon multiple data sources to examine refugee migration patterns from Ukraine to European Union (EU) countries, with the goal of developing a predictive model for refugee flows. The most substantial and consistent dataset originates from Eurostat, providing migration flow data across EU member states. Additional data sources include the Freedom House political freedom indicators and custom-constructed geographic distance data, both of which contribute to capturing the key factors influencing refugee destinations.
+
+The scope of this project includes both the five primary pull factors for refugees and the broader push factors originating from Ukraine. The five pull factors considered for this study include accessibility, safety, familiarity, opportunity, and gravity. However, familiarity was unable to be fully modeled due to a lack of consistent data. These factors collectively shape refugee decision-making and are reflected across the selected data sources.
+
+In March 2022, the European Union passed a temporary protection order which has permitted up to 4 million refugees asylum across member states[@council2025temporary]. This order has been extended into the present and has been monitored through various datasets employed by this project, sourced from Eurostat. The policy decision provides a valuable temporal marker and structural explanation for observed migration patterns and will be a key consideration when modeling flows over time.
+
+The target variable for the model is the total presence of refugees in a given European country. This stratified granularity is necessary to align with the temporal structure of Eurostat datasets and to allow for responsiveness to external events such as policy shifts or conflict escalations. The following countries have been excluded from analysis due to a lack of consistent or complete data: Albania, Andorra, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Kosovo, Liechtenstein, Moldova, Monaco, Montenegro, North Macedonia, Russia, San Marino, Serbia, Ukraine, United Kingdom, and Vatican City. These exclusions, while limiting, are consistent with data-driven modeling practices aimed at ensuring integrity and comparability across observations.
+
+The World Bank [@worldbank2025ai] provides critical socioeconomic data on countries and is commonly used for historical assessments in case studies. However, this source lags by at least a year, making monthly analysis into August of 2025 impossible. Therefore, World Bank data has been excluded from this study. This exclusion reinforces the need to rely heavily on Eurostat datasets, which provide both higher-frequency and more regionally tailored data.
+
+To address this gap, multiple datasets provided by Eurostat have been aggregated to make this project feasible. Economic health of included countries is modeled based on the GDP and Main Components [@eurostat_nama_10_gdp] dataset, which captures a country’s economic viability through metrics including: GDP, gross value added, consumption expenditure, exports and imports of goods and services, employee compensation, and wages and salaries. All of these indicators will be included in the model for individuals between the ages of 20 and 64, ensuring that economic pull factors are consistently measured across the relevant working-age population.
+
+Population by Educational Attainment Level [@eurostat_edat_lfse_03] captures the educational attainment of those between the ages of 15 and 64 and is recorded annually. This provides an important proxy for opportunity, as countries with higher levels of educational attainment may offer greater professional and economic opportunities to arriving refugees.
+
+This is supplemented by the Unemployment by Sex and Age dataset [@eurostat_lfsi_emp_q_h], which provides monthly unemployment statistics across the included countries and the relevant date range. This dataset provides much-needed temporal resolution for labor market conditions, which represent a critical component of the opportunity pull factor. Annual employment data is also provided by the Employment and Activity by Sex and Age [@eurostat_lfsi_emp_q_h] dataset; however, its contribution to modeling will be limited as the data only extends to 2023. Nevertheless, the inclusion of both monthly and annual labor market indicators provides additional context to the opportunity structures present in each destination country.
+
+The pull factor of safety is not explicitly captured within the provided data, as all destination countries included in the model are within Europe and broadly meet a baseline standard of safety and political stability. As a result, safety offers limited explanatory power in this context compared to analyses across more diverse global regions where safety differentials between destinations are more pronounced. For the purposes of this study, safety is treated as a near-constant, allowing other pull factors to play a more significant explanatory role.
+
+The push factors are accounted for in the Freedom House [@freedomhouse2025] dataset, which is recorded annually. The Freedom House dataset is used to measure the freedom of Ukrainian citizens relative to every other country. Scores are assigned based on the assessment of various criteria including due process, freedom of assembly, election freedom, and governmental transparency. Less relevant components of the dataset have been filtered out, leaving the total freedom score and its fluctuation between 2020 and 2025 as the measure of interest. This variable provides a critical time-series perspective on how political conditions within Ukraine have evolved and how those changes may influence refugee flows.
+
+Established diaspora networks are fundamentally the most important aspect of existing gravity models. In response to the EU resolution to permit temporary protection, three Eurostat datasets were employed to capture monthly asylum trends: Asylum Applicants by Type [@eurostat_migr_asytpsm], Beneficiary Country Refugee Totals [@eurostat_migr_asytpfm], and decisions to grant temporary protection to applicants [@eurostat_migr_asyappctzm]. The Beneficiary Country Refugee Totals dataset was used to establish both existing diaspora networks and the target variable, which is the fluctuation of migrants between months. During the modeling process, particular attention will be paid to the relationship between the size of existing diaspora networks and monthly migration fluctuations to avoid introducing endogeneity or spurious correlations into the model. This consideration is especially important given the use of Random Forest Models, where complex interaction effects and nonlinear relationships, if left unchecked, could obscure meaningful causal relationships.
+
+An inherent aspect of refugee flow is distance from the home country to the destination country. The CEPII provides detailed geographic data on countries, which prior research has used to establish trends in displacement distances. However, due to processing limitations, this data was not accessible. The solution to this limitation was a dataset constructed by calculating the distance from each included country’s capital city to Ukraine. Whether the country shares a border with Ukraine has also been included as a binary variable within this dataset. Together, these measures provide a pragmatic, if simplified, operationalization of geographic accessibility as a pull factor.
+
+The objective of the model is to use temporally variable data on the political freedom of a country at war to assess the flow of refugees into host nations, while considering the pull factors of the host nations. The Random Forest Modeling approach is preferred for this project, as it is well-suited to handle the mix of continuous and categorical predictors, pervasive non-linear relationships, and complex interaction effects present in the integrated dataset.
+
+**Methods**
+
+To construct the modeling dataset, all relevant Eurostat, Freedom House, and geographic sources were cleaned, filtered, and harmonized to a common monthly structure spanning 2020–2025. Annual indicators such as political freedom scores and employment rates were expanded to monthly resolution using a custom stratification function, while datasets already reporting at the monthly level, such as refugee presence, unemployment, and inflation, were preserved in their native format. Country names were normalized across files, and extraneous or malformed entries were removed. Gravity-related features were constructed using cumulative refugee counts per country and proximity data, which was calculated from Kyiv to each EU capital using the haversine formula. The final dataset integrates push factors (Ukraine’s political deterioration) with four primary pull mechanisms (accessibility, opportunity, safety, and gravity) across all EU/EEA nations with complete data coverage. While some processing steps required manual corrections due to inconsistent formatting, the result is a unified modeling frame exported as modeling_df_with_ukraine_freedom.csv. A full breakdown of the cleaning pipeline and source files is available on the referenced GitHub for replication and audit. This structured dataset now allows for the exploration of spatial migration patterns, such as those depicted in the choropleth visualization below.
+
+```{r set up enviornment and start data processing, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(janitor)
+library(readr)
+library(dplyr)
+library(tidyverse)
+setwd("C:/Users/macle/OneDrive/Desktop/Capstone/DATA/1. asylum application Demographics")
+getwd()
+migr_asyappctzm_parsed <- read_csv("migr_asyappctzm_parsed.csv")
+
+df <- read.csv("migr_asyappctzm_parsed.csv")
+
+
+# group the data by time and note that time is the country column for the time being then sum the numeric columns
+df_aggregated <- df %>%
+  group_by(TIME) %>%
+  summarise(across(where(is.numeric), sum, na.rm = TRUE), .groups = "drop")
+
+
+write.csv(df_aggregated, "aggregated_asyappctzm.csv", row.names = FALSE)
+
+```
+
+```{r Load Freedom House Data,echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+FreedomHouse <- read_csv("C:/Users/macle/OneDrive/Desktop/Capstone/DATA/4. Freedom house/FreedomHouse.csv")
+View(FreedomHouse)
+
+
+
+FreedomHouse_Filtered <- FreedomHouse %>% 
+  filter(`Country/Territory` == "Ukraine")
+```
+
+```{r Load All CSVs, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+setwd("C:/Users/macle/OneDrive/Desktop/Capstone/DATA/12. Working Data")
+getwd()
+FreedomHouse <- read_csv("FreedomHouse.csv")
+AssylumApplicationDemographics <- read_csv("AssylumApplicationDemographics.csv")
+Education15_64 <- read_csv("Education15_64.csv")
+EmploymentActivity20_64 <- read_csv("EmploymentActivity20_64.csv")
+GDPMainComponents <- read_csv("GDPMainComponents.csv")
+HICP <- read_csv("HICP.csv")
+TempProtectionBeneficiaries <- read_csv("TempProtectionBeneficiaries.csv")
+TempProtectionGranted <- read_csv("TempProtectionGranted.csv")
+Unemployment <- read_csv("Unemployment.csv")
+```
+
+```{r Split GDP Main Component , echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+# set working df
+df <- read.csv("GDPMainComponents.csv", check.names = FALSE)
+
+
+
+colnames(df) <- gsub("\\.+", " ", colnames(df))
+
+
+#  unique values from the ational accounts indicator (ESA 2010 column
+unique_values <- unique(df$`National accounts indicator (ESA 2010)`)
+
+# loop to split and save
+for (val in unique_values) {
+  
+  subset_df <- df[df$`National accounts indicator (ESA 2010)` == val, ]
+    safe_name <- gsub("[^[:alnum:]_]", "_", val)
+  write.csv(subset_df, paste0(safe_name, ".csv"), row.names = FALSE)
+}
+
+
+```
+
+```{r Split Education 15_64.CSV, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+df <- read.csv("Education15_64.csv", check.names = FALSE)
+
+
+
+# clean dots from colnames
+colnames(df) <- gsub("\\.+", " ", colnames(df))
+
+
+# acquire unique values from the ISCED 2011 column
+unique_values <- unique(df$`International Standard Classification of Education (ISCED 2011)`)
+
+# Loop to split and save
+for (val in unique_values) {
+    subset_df <- df[df$`International Standard Classification of Education (ISCED 2011)` == val, ]
+    safe_name <- gsub("[^[:alnum:]_]", "_", val)
+    write.csv(subset_df, paste0(safe_name, ".csv"), row.names = FALSE)
+}
+
+```
+
+```{r Mass Import All CSVs, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+# List all .csv files in the directory
+file_list <- list.files(pattern = "\\.csv$", full.names = TRUE)
+
+# mass read into named list
+data_list <- lapply(file_list, read.csv)
+
+# name elements after file name for tracking data sources in combined csv
+names(data_list) <- gsub("\\.csv$", "", basename(file_list))
+
+
+list2env(data_list, envir = .GlobalEnv)
+
+
+```
+
+```{r Global Truncation of Data Based off EU_Expanded List, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+# set the coutnries which will be used in analysis
+eu_expanded <- c(
+  "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+  "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+  "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+  "Slovenia", "Spain", "Sweden", "Iceland", "Norway", "Switzerland"
+)
+
+# filter globally
+data_list <- lapply(data_list, function(df) {
+  
+  colnames(df) <- tolower(colnames(df))
+    country_col <- grep("country|time|country/territory", colnames(df), value = TRUE)[1]
+  
+  if (!is.na(country_col)) {
+        df <- df[df[[country_col]] %in% eu_expanded, ]
+  }
+  
+  return(df)
+})
+
+```
+
+```{r Eliminate Austria From Asylum Application DEMO, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+AssylumApplicationDemographics <- AssylumApplicationDemographics[AssylumApplicationDemographics$TIME != "Austria", ]
+
+```
+
+```{r HICP Cleaning, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+HICP <- HICP[HICP$TIME %in% eu_expanded, ]
+
+
+```
+
+```{r Combine Monthyl Refugees and Application Acceptance, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(readr)
+
+# read in the files
+beneficiaries <- read_csv("TempProtectionBeneficiaries.csv")
+granted <- read_csv("TempProtectionGranted.csv")
+
+#define columns to drop
+cols_to_drop <- c("Time frequency", "Unit of measure", 
+                  "Country of citizenship", "Sex", "Age class")
+
+#  beneficiaries dataset
+beneficiaries_clean <- beneficiaries %>%
+  select(-c("Time frequency", "Unit of measure", 
+            "Country of citizenship", "Sex", "Age class")) %>%
+  mutate(Class = "TempProtectionBeneficiaries")
+
+#  granted dataset (only drop TIME)
+granted_clean <- granted %>%
+  select(-TIME) %>%
+  mutate(Class = "TempProtectionGranted")
+
+# combine the cleaned datasets
+Aggregated_Data <- bind_rows(beneficiaries_clean, granted_clean)
+
+write_csv(Aggregated_Data, "Aggregated_Data.csv")
+
+#extremely important, make sure you open the saved csv and verify that the time column was properly transmuted. if not you will have to manually fix it save the csv and reload which is why this next block of code rereads the data into the r environment
+
+Aggregated_Data <- read_csv("Aggregated_Data.csv")
+
+# aggregated data final cleaning 
+
+# Assuming your dataset is called df (replace with actual name if different)
+
+
+# apply eu country filter
+Aggregated_Data <- Aggregated_Data[Aggregated_Data$TIME %in% eu_expanded, ]
+
+# rename time column to country
+colnames(Aggregated_Data)[colnames(Aggregated_Data) == "TIME"] <- "Country"
+
+
+
+
+#for some reason when the second data set is loaded into the aggregated dataset the countries all come back as NA so I manually copy pasted the countries and verified that they corresponded to the correct value.
+```
+
+```{r Combine Annual Data, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(readr)
+
+employment <- read_csv("EmploymentActivity20_64.csv")
+gdp <- read_csv("GDPMainComponents.csv")
+education <- read_csv("Education15_64.csv")
+
+# get correct dates to clean and convert
+cols_to_char <- c("2020", "2021", "2022", "2023", "2024")
+employment_clean <- employment %>%
+  mutate(across(all_of(cols_to_char), as.character)) %>%
+  mutate(Dataset = "EmploymentActivity20_64")
+gdp_clean <- gdp %>%
+  mutate(across(all_of(cols_to_char), as.character)) %>%
+  mutate(Dataset = "GDPMainComponents")
+
+education_clean <- education %>%
+  mutate(across(all_of(cols_to_char), as.character)) %>%
+  mutate(Dataset = "Education15_64")
+
+# Combine them
+Aggregated_Data_2 <- bind_rows(employment_clean, gdp_clean, education_clean)
+
+write_csv(Aggregated_Data_2, "Aggregated_Data_2.csv")
+
+```
+
+```{r Combine Monthly Data (Unemployment and HICP are enumarated via month), echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(readr)
+
+hicp <- read_csv("HICP.csv")
+unemployment <- read_csv("Unemployment.csv")
+
+# Identify date columns
+date_cols <- grep("^202", names(hicp), value = TRUE)
+
+# process HICP
+hicp_clean <- hicp %>%
+  mutate(across(all_of(date_cols), as.character))
+
+# process Unemployment
+unemployment_clean <- unemployment %>%
+  mutate(across(all_of(date_cols), as.character))
+
+# combine
+Aggregated_Data_3 <- bind_rows(hicp_clean, unemployment_clean)
+
+
+write_csv(Aggregated_Data_3, "Aggregated_Data_3.csv")
+print("Aggregated_Data_3.csv created successfully.")
+colnames((Aggregated_Data_3))
+```
+
+```{r Aggregaded_2 distill countries, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+# restate vector
+eu_expanded <- c(
+  "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Czech Republic",
+  "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+  "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+  "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+  "Slovenia", "Spain", "Sweden", "Iceland", "Norway", "Switzerland"
+)
+Aggregated_Data_2[Aggregated_Data_2 == ":"] <- NA
+# Filter and rename
+Aggregated_Data_2 <- Aggregated_Data_2[Aggregated_Data_2$TIME %in% eu_expanded, ]
+names(Aggregated_Data_2)[names(Aggregated_Data_2) == "TIME"] <- "Country"
+
+
+unique(Aggregated_Data_2$Country)
+write.csv(Aggregated_Data_2, "Aggregated_Data_2", row.names = FALSE, fileEncoding = "UTF-8")
+
+Aggregated_Data_2[Aggregated_Data_2 == ":"] <- NA
+
+```
+
+```{r Aggregaded_3 distill countries, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+eu_expanded <- c(
+  "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Czech Republic",
+  "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+  "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+  "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+  "Slovenia", "Spain", "Sweden", "Iceland", "Norway", "Switzerland"
+)
+
+# Filter and rename
+Aggregated_Data_3 <- Aggregated_Data_3[Aggregated_Data_3$TIME %in% eu_expanded, ]
+names(Aggregated_Data_3)[names(Aggregated_Data_3) == "TIME"] <- "Country"
+
+unique(Aggregated_Data_3$Country)
+write.csv(Aggregated_Data_3, "Aggregated_Data_3", row.names = FALSE, fileEncoding = "UTF-8")
+```
+
+```{r Filtering Freedom House,echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+freedom_house <- read.csv("FreedomHouse.csv")
+colnames(freedom_house)
+# Subset to relevant columns
+FreedomHouseFiltered <- freedom_house[, c(
+  "Country.Territory", "Edition", "A1", "A2", "B1", "B3", 
+  "C2", "D1", "E1", "F1", "F3", "G1", "Total"
+)]
+
+# filter for Ukraine only
+FreedomHouseFiltered <- subset(FreedomHouseFiltered, `Country.Territory` == "Ukraine")
+
+
+FreedomHouseFiltered <- FreedomHouseFiltered[FreedomHouseFiltered$Edition >= 2020 & FreedomHouseFiltered$Edition <= 2025, ]
+
+# Rename edition to time
+colnames(FreedomHouseFiltered)[colnames(FreedomHouseFiltered) == "Edition"] <- "time"
+colnames(FreedomHouse_Filtered)[colnames(FreedomHouse_Filtered) == "Country/Territory"] <- "Country"
+
+write.csv(FreedomHouseFiltered, "FreedomHouseFiltered.csv", row.names = FALSE)
+
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+write_csv(Aggregated_Data, "Aggregated_Data.csv")
+write_csv(Aggregated_Data_2, "Aggregated_Data_2.csv")
+write_csv(Aggregated_Data_3, "Aggregated_Data_3.csv")
+write_csv(FreedomHouse_Filtered, "FreedomHouse_Filtered.csv")
+write_csv(eu_capitals, "eu_capitals.csv")
+```
+
+```{r Sweep Enviornment to Avoid Session Crashes then Reread the Final Products Back into the Enviornment, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+Aggregated_Data <- read.csv("Aggregated_Data.csv")
+Aggregated_Data_2 <- read.csv("Aggregated_Data_2.csv")
+Aggregated_Data_3 <- read.csv("Aggregated_Data_3.csv")
+FreedomHouse_Filtered <- read.csv("FreedomHouse_Filtered.csv")
+eu_capitals <- read.csv("eu_capitals.csv")
+getwd()
+```
+
+```{r reshape annual data}
+library(dplyr)
+library(tidyr)
+library(readr)
+
+# Reload original data
+agg_data_2 <- read_csv("Aggregated_Data_2.csv")
+freedom_house <- read_csv("FreedomHouse_Filtered.csv")
+
+# -----------------------------
+# Helper function to expand annual to monthly
+expand_to_months <- function(df, year_col = "Year", join_col = "Country") {
+  df %>%
+    mutate(Year = as.character(!!sym(year_col))) %>%
+    tidyr::crossing(Month = sprintf("%02d", 1:12)) %>%
+    mutate(YearMonth = paste0(Year, "-", Month)) %>%
+    select(-Month, -!!sym(year_col))
+}
+# -----------------------------
+
+# 🔁 Aggregated Data 2
+
+agg_data_2_long <- agg_data_2 %>%
+  pivot_longer(cols = c("2020", "2021", "2022", "2023", "2024"),
+               names_to = "Year", values_to = "Value") %>%
+  expand_to_months(year_col = "Year", join_col = "Country")
+
+# Now pivot wide and clean column names
+agg_data_2_wide <- agg_data_2_long %>%
+  pivot_wider(names_from = Class, values_from = Value)
+
+colnames(agg_data_2_wide) <- gsub(" ", "_", colnames(agg_data_2_wide))
+
+# 🔁 Freedom House
+
+freedom_house <- freedom_house %>%
+  rename(Year = Edition)  # No need to rename 'Country'
+
+freedom_house_long <- expand_to_months(freedom_house, year_col = "Year", join_col = "Country")
+
+
+
+
+```
+
+```{r reshape monthly data}
+
+
+# Load refugee flow data
+agg_data <- read_csv("Aggregated_Data.csv")
+
+agg_data_long <- agg_data %>%
+  pivot_longer(
+    cols = matches("^\\d{4}-\\d{2}$"),  # Matches "2022-03", "2023-07", etc.
+    names_to = "YearMonth",
+    values_to = "Refugee_Flow"
+  )
+
+
+# Load aggregated class data
+agg_data_3 <- read_csv("Aggregated_Data_3.csv")
+
+agg_data_3_long <- agg_data_3 %>%
+  pivot_longer(
+    cols = matches("^\\d{4}-\\d{2}$"),
+    names_to = "YearMonth",
+    values_to = "Value"
+  ) %>%
+  pivot_wider(
+    names_from = Class,
+    values_from = Value
+  )
+
+```
+
+```{r Merge all data}
+# Step 1: Build core modeling dataframe (EU countries only)
+modeling_df <- agg_data_long %>%
+  left_join(agg_data_3_long, by = c("Country", "YearMonth")) %>%
+  left_join(agg_data_2_wide, by = c("Country", "YearMonth")) %>%
+  left_join(eu_capitals, by = "Country") %>%
+  mutate(Year = as.integer(substr(YearMonth, 1, 4)))  # Extract year early for later use
+
+# Step 2: Extract Ukraine's Freedom House scores by Year
+ukraine_fh_long <- freedom_house_long %>%
+  filter(Country == "Ukraine") %>%
+  mutate(Year = as.integer(substr(YearMonth, 1, 4))) %>%
+  distinct(Year, .keep_all = TRUE) %>%               # Ensure only 1 row per year
+  select(-Country, -YearMonth)                       # Drop unused cols to avoid collision
+# Step 3: Join Ukraine's freedom scores into EU rows (replicate Ukraine’s scores across same year)
+modeling_df <- modeling_df %>%
+  left_join(ukraine_fh_long, by = "Year")
+
+# Step 4: Optionally add original Ukraine rows back in (for completeness or contrast)
+ukraine_rows <- freedom_house_long %>%
+  filter(Country == "Ukraine") %>%
+  mutate(Year = as.integer(substr(YearMonth, 1, 4))) %>%
+  left_join(eu_capitals, by = "Country")  # Add coordinates if desired
+
+# Step 5: Append Ukraine rows to the bottom of modeling_df
+modeling_df <- bind_rows(modeling_df, ukraine_rows)
+
+# Step 6: Export for inspection
+write_csv(modeling_df, "modeling_df_with_ukraine_freedom.csv")
+
+
+
+```
+
+```{r choropleth-map, echo=FALSE, fig.width=8, fig.height=6, out.width='100%', fig.align='center'}
+# Load required packages
+library(geosphere)
+library(ggplot2)
+library(maps)
+library(dplyr)
+library(readr)
+
+# === ORIGINAL MAP PREP ===
+eu_capitals <- data.frame(
+  Country = c("Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia", "Czech Republic",
+              "Denmark", "Estonia", "Finland", "France", "Germany", "Greece",
+              "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+              "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+              "Slovenia", "Spain", "Sweden", "Iceland", "Norway", "Switzerland"),
+  Capital = c("Brussels", "Sofia", "Zagreb", "Nicosia", "Prague", "Prague",
+              "Copenhagen", "Tallinn", "Helsinki", "Paris", "Berlin", "Athens",
+              "Budapest", "Dublin", "Rome", "Riga", "Vilnius", "Luxembourg",
+              "Valletta", "Amsterdam", "Warsaw", "Lisbon", "Bucharest", "Bratislava",
+              "Ljubljana", "Madrid", "Stockholm", "Reykjavik", "Oslo", "Bern"),
+  Latitude = c(50.8503, 42.6977, 45.8150, 35.1856, 50.0755, 50.0755,
+               55.6761, 59.4370, 60.1695, 48.8566, 52.5200, 37.9838,
+               47.4979, 53.3498, 41.9028, 56.9496, 54.6872, 49.6117,
+               35.8997, 52.3676, 52.2297, 38.7169, 44.4268, 48.1486,
+               46.0569, 40.4168, 59.3293, 64.1466, 59.9139, 46.9481),
+  Longitude = c(4.3517, 23.3219, 15.9819, 33.3823, 14.4378, 14.4378,
+                12.5683, 24.7535, 24.9354, 2.3522, 13.4050, 23.7275,
+                19.0402, -6.2603, 12.4964, 24.1052, 25.2797, 6.1319,
+                14.5146, 4.9041, 21.0122, -9.1399, 26.1025, 17.1077,
+                14.5058, -3.7038, 18.0686, -21.9426, 10.7522, 7.4474)
+)
+
+# Drop duplicated "Czech Republic" row
+eu_capitals <- eu_capitals[eu_capitals$Country != "Czech Republic", ]
+
+# Distance to Kyiv (in km)
+kyiv_coords <- c(30.5234, 50.4501)
+eu_capitals$Distance_km <- distHaversine(
+  matrix(c(eu_capitals$Longitude, eu_capitals$Latitude), ncol = 2),
+  kyiv_coords
+) / 1000
+
+# Flag border countries
+borders_ukraine <- c("Poland", "Slovakia", "Hungary", "Romania")
+eu_capitals$Borders_Ukraine <- ifelse(eu_capitals$Country %in% borders_ukraine, "Yes", "No")
+
+write.csv(eu_capitals, "Kyiv_to_EU_Capitals_Distance.csv", row.names = FALSE)
+
+refugees_2025 <- agg_data %>%
+  select(Country, `2025-04`) %>%
+  rename(Refugees = `2025-04`)
+
+
+world_map <- map_data("world")
+europe_map <- subset(world_map, long > -25 & long < 45 & lat > 35 & lat < 70)
+
+choropleth_df <- europe_map %>%
+  left_join(refugees_2025, by = c("region" = "Country"))
+
+ggplot() +
+  geom_polygon(data = choropleth_df, aes(x = long, y = lat, group = group, fill = Refugees),
+               color = "white") +
+  geom_point(data = eu_capitals, aes(x = Longitude, y = Latitude), color = "blue", size = 2) +
+  geom_text(data = eu_capitals, aes(x = Longitude, y = Latitude, label = Capital),
+            hjust = -0.1, vjust = -0.5, size = 2, fontface = "bold") +
+  geom_point(aes(x = 30.5234, y = 50.4501), color = "red", size = 3) +
+  geom_text(aes(x = 30.5234, y = 50.4501, label = "Kyiv"), hjust = -0.1, vjust = -0.5, size = 3) +
+  coord_fixed(1.3) +
+  theme_minimal() +
+  scale_fill_gradient(low = "lightyellow", high = "cyan", na.value = "gray90") +
+  labs(title = "Plot 1: Ukraine to Europe Refugee Totals (Apr 2025)",
+       fill = "Refugees (2025-04)")
+
+
+```
+
+```{r modeling-full-70, echo=FALSE, message=FALSE, warning=FALSE, results='hide', error=TRUE}
+library(tidyverse)
+library(ranger)
+stopifnot(exists("modeling_df"))
+
+# Step 1: Use modeling_df as the working dataset
+df <- modeling_df
+
+# Step 2: Keep only rows where we have known refugee flows from Ukraine
+# This creates the training data (e.g., known recipients)
+training_df <- df %>%
+  filter(!is.na(Refugee_Flow))
+
+# Step 3: Prepare prediction data ,  recipient countries with NA refugee flows (i.e., where we want to predict)
+prediction_df <- df
+
+# Step 4: Convert character and logical columns to factors for ranger
+training_df <- training_df %>%
+  mutate(across(where(is.character), as.factor),
+         across(where(is.logical), as.factor))
+
+prediction_df <- prediction_df %>%
+  mutate(across(where(is.character), as.factor),
+         across(where(is.logical), as.factor))
+
+# Step 5: Clean column names for both datasets (important for consistency)
+colnames(training_df) <- make.names(colnames(training_df))
+colnames(prediction_df) <- make.names(colnames(prediction_df))
+
+# Step 6: Fit the Random Forest Models&m lyrics
+
+set.seed(42)
+rf_model <- ranger(
+  formula = Refugee_Flow ~ .,
+  data = training_df,
+  importance = "impurity",
+  num.trees = 500
+)
+
+
+
+# Step 7: Predict refugee inflows for Ukraine (i.e., countries in prediction_df)
+predicted_ukraine_flows <- predict(rf_model, data = prediction_df)$predictions
+
+# Step 8: Add predictions to the dataframe
+prediction_df$Predicted_Refugee_Flow <- predicted_ukraine_flows
+
+
+invisible(NULL)
+
+
+```
+
+This choropleth is a useful visual aid for readers to reference for the countries included in the study as well as the number of migrants present in each country in April of 2025.
+
+### Iterative Sizing and Variable Importance Strategy {.unnumbered}
+
+Each model was trained on the same input data, using identical bootstrapping logic and default hyperparameters, with num.trees (number of trees) as the only changing input. The 500-tree model performed best in terms of out-of-bag (OOB) R², suggesting that the added complexity offered marginal but measurable gains in explanatory power. Specifically, R² improved from 0.962 (50 trees) to 0.965 (500 trees). This essentially has a negligible impact on performance, but it was consistent across multiple iterations and reflected an actual gain in predictive stability, which is important given the moderate dimensionality and nonlinearity of the modeled data.
+
+Once the model was finalized, attention turned to interpreting its internal logic. The Random Forest Model calculates variable importance using the total decrease in impurity (Gini or variance, depending on the outcome type) attributable to each predictor, averaged across all trees. This yields an “impurity importance” score for each variable, a proxy for how useful the feature was in splitting the data to reduce prediction error.
+
+To make this output digestible, we converted the raw importance vector into a three-column, multi-row table, with variables grouped side-by-side for readability. This table does not just enumerate top predictors, it communicates scale, redundancy, and diminishing returns. Unsurprisingly, high-ranking variables include well-known economic indicators such as Imports of Goods and Services, GDP at Market Prices, and Employment Rate, as well as structural factors like Distance to Kyiv and Border Status. These reflect classical pull mechanisms found in migration literature.
+
+What this process confirmed is that variable importance is not a ranking of theoretical significance but of statistical leverage. Some variables may be conceptually important yet provide little marginal benefit once better proxies or composite features are introduced. This is a necessary check for both modelers and policymakers: even theoretically justified variables don’t always move the needle.
+
+Finally, this entire process, benchmarking tree count, tuning ensemble depth, and surfacing variable importance, serves a dual purpose. First, it ensures the model is technically robust. But second, and more importantly, it ensures that models are appropriately iterated and that insights drawn from the model are grounded in the underlying mechanics, and that those mechanics are transparent.
+
+After assessing Random Forest performance using an initial set of economic, demographic, and structural indicators, we proceeded to formalize our variable inclusion process and build the final ensemble model. The goal at this stage was twofold: (1) maximize out-of-bag performance, and (2) ensure a principled representation of all five core drivers of refugee migration, accessibility, opportunity, familiarity, gravity, and safety, with a particular focus on capturing political deterioration within Ukraine over time.
+
+To justify the final ensemble depth, we benchmarked model performance using three commonly used tree counts: 50, 100, and 500 trees. All models were seeded identically to maintain consistency in bootstrapping and feature sampling.
+
+::: {layout-ncol="2"}
+```{r, fig.align='center', fig.width=4, fig.height=4}
+
+library(knitr)
+library(kableExtra)
+set.seed(42)
+rf_model_50 <- ranger(Refugee_Flow ~ ., data = training_df, num.trees = 50)
+set.seed(42)
+rf_model_100 <- ranger(Refugee_Flow ~ ., data = training_df, num.trees = 100)
+set.seed(42)
+rf_model_500 <- ranger(Refugee_Flow ~ ., data = training_df, num.trees = 500)
+
+# Step 11: Create summary dataframe of R² by tree count
+tree_comparison_df <- data.frame(
+  Trees = c(50, 100, 500),
+  R_squared_OOB = c(rf_model_50$r.squared, rf_model_100$r.squared, rf_model_500$r.squared)
+)
+
+library(knitr)
+library(kableExtra)
+
+tree_comparison_df %>%
+  kable(
+    caption = "OOB R Squared Random Forest Models by Tree Count",
+    digits = 5,
+    col.names = c("Number of Trees", "OOB R²")
+  ) %>%
+  kable_styling(full_width = FALSE, position = "center", bootstrap_options = c("striped", "hover"))
+
+```
+
+```{r, fig.align='center', fig.width=4, fig.height=4}
+# Plot on the right
+library(ggplot2)
+
+ggplot(tree_comparison_df, aes(x = Trees, y = R_squared_OOB)) +
+  geom_line() +
+  geom_point(size = 3) +
+  labs(
+    title = "OOB R-squared vs. Number of Trees",
+    x = "Number of Trees",
+    y = "OOB R-squared"
+  ) +
+  theme_minimal()
+```
+:::
+
+The 500-tree model slightly outperformed the 100-tree alternative (OOB R² = 0.96578 vs. 0.96331), confirming its selection as the final ensemble configuration. These improvements, though marginal in scale, consistently appeared across reruns and reflect stronger generalization rather than overfitting. More importantly, this step set the foundation for evaluating which predictors were consistently valuable as trees were added.
+
+```{r,echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+
+library(tibble)
+library(dplyr)
+library(tidyr)
+library(kableExtra)
+
+# Step 1: Extract and convert importance vector to data frame
+imp <- importance(rf_model)
+imp_df <- enframe(imp, name = "Variable", value = "Importance")
+imp_df <- imp_df %>%
+  mutate(Variable = str_wrap(Variable, width = 30))
+
+
+# Step 2: Pad with NA to make total rows divisible by 3
+remainder <- nrow(imp_df) %% 3
+if (remainder != 0) {
+  imp_df <- bind_rows(imp_df, tibble(Variable = rep(NA, 3 - remainder), Importance = rep(NA, 3 - remainder)))
+}
+
+# Step 3: Assign row groupings
+imp_df <- imp_df %>%
+  mutate(group_id = rep(1:(nrow(.)/3), each = 3),
+         position = rep(1:3, times = nrow(.)/3))
+
+# Step 4: Reshape to wide format
+wide_imp <- imp_df %>%
+  pivot_wider(names_from = position, values_from = c(Variable, Importance)) %>%
+  select(Variable_1, Importance_1,
+         Variable_2, Importance_2,
+         Variable_3, Importance_3)
+
+
+
+kable(wide_imp,
+      caption = "Variable Importance Scores from Random Forest",
+      digits = 3,
+      col.names = c("Variable", "Importance",
+                    "Variable", "Importance",
+                    "Variable", "Importance")) %>%
+  kable_styling(
+    full_width = FALSE,
+    position = "center",
+    font_size = 8,
+    latex_options = "scale_down",
+    bootstrap_options = c("striped", "hover")  # This is ignored in PDF but safe to leave in
+  )
+
+
+```
+
+![Variable Importance Scores from Random Forest](images/Variable%20Importance%20Scores%20From%20Random%20Forrest-01.jpg){#fig-varimp}
+
+With the initial model trained, we visualized variable importance by impurity reduction. As shown below, the top-ranked variables were overwhelmingly economic and structural:
+
+```{r top_vi, fig.width=8, fig.height=6, out.width='0.9\\textwidth'}
+library(ggplot2)
+library(dplyr)
+
+vi <- as.data.frame(importance(rf_model))
+vi$Variable <- rownames(vi)
+
+top_vi <- vi %>%
+  arrange(desc(`importance(rf_model)`)) %>%
+  slice_head(n = 20)
+
+ggplot(top_vi, aes(
+    x = reorder(Variable, `importance(rf_model)`),
+    y = `importance(rf_model)`
+  )) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Top 20 of Original 70 Predictors by Importance",
+    x = "Predictor",
+    y = "Impurity Importance"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0, face = "bold"),
+    axis.text.y = element_text(margin = margin(r = 5))  # add a little breathing room
+  )
+```
+
+Here, Index 2015, Labor Force Participation, Imports, and Exports dominated, with geospatial indicators like Latitude, Longitude, and Country falling to the bottom. The education variables ranked in the midrange, and nearly all governance-related indicators, those from the Freedom House dataset, contributed no measurable importance.
+
+This prompted two corrective actions: 1) Truncate the predictor set. Variables that were functionally inert (e.g., spatial coordinates, duplicated country labels) were removed. 2) Reevaluate political variables. Since Freedom House was the main proxy for Ukrainian push factors, it cannot be ignored, even if some indicators showed low raw importance. Instead, we isolated only the theoretically strongest measures.
+
+To retain explanatory fidelity while eliminating noise, we manually filtered Freedom House indicators using both empirical performance and codebook based rationale. The retained variables reflect democratic process, corruption, legal rights, association freedoms, and judicial integrity, all factors likely to affect refugee push pressure in a modern autocracy. The following Freedom House indicators were retained: (A1) Electoral Process (B1), (B2) Political Pluralism and Functioning of Government (C1) Freedom of Expression and Belief (D), (D3), (D4) Associational and Organizational Rights (E), (E3) Rule of Law and Due Process (F), (F3) Personal Autonomy and Individual Rights (G1) Control of Corruption. These measures were chosen not because they scored highly in preliminary impurity rankings, but because they offer a signal and represent fundamental dimensions of political collapse and freedom. They form the backbone of the model’s representation of “push factors” from Ukraine.
+
+After finalizing the Freedom House subset, we constructed a new training dataset containing only the top-performing economic, geographic, and political variables.
+
+\clearpage
+
+| Predictor          | Predictor           | Predictor             |
+|--------------------|---------------------|-----------------------|
+| Index.2015.100     | Total               | Percent.Labor.Force   |
+| Imports_Goods      | Exports_Goods       | GDP_Market_Prices     |
+| Consumption_Final  | Wages_Salaries      | Comp_Employees        |
+| Value_Added_Gross  | UpperSec&PostLvl3.8 | LessThanPrim&LowerSec |
+| UpperSecVoc_Lvl3&4 | Employment_LFS      | Distance_km           |
+| Borders_Ukraine    | Country             | A1                    |
+| B1                 | B2                  | C1                    |
+| D                  | D3                  | D4                    |
+| E                  | E3                  | F                     |
+| F3                 | G1                  | \-                    |
+
+The model was retrained using this cleaner, more focused dataset. As shown in the updated variable importance graph below, the rankings shifted dramatically.
+
+# Results
+
+Distance to Kyiv (Distance_km), border adjacency (Borders_Ukraine), and labor participation again dominate, but now several Freedom House indicators break into the visible range. While they don’t outperform economic factors, their inclusion now enhances multidimensional fidelity across all five refugee migration drivers.
+
+```{r, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+prediction_df %>% filter(Country == "Poland")
+
+```
+
+```{r, echo=FALSE, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(dplyr)
+library(tidyr)
+library(ranger)
+
+# Step 1: Define selected predictors + outcome
+selected_vars <- c(
+  "Refugee_Flow",
+  "Index..2015.100",
+  "Total",
+  "Percentage.of.population.in.the.labour.force..Non.Seasonal.Adjusted.",
+  "Imports_of_goods_and_services",
+  "Exports_of_goods_and_services",
+  "Gross_domestic_product_at_market_prices",
+  "Final_consumption_expenditure",
+  "Wages_and_salaries",
+  "Compensation_of_employees",
+  "Value_added._gross",
+  "Upper_secondary._post.secondary_non.tertiary_and_tertiary_education_.levels_3.8.",
+  "Less_than_primary._primary_and_lower_secondary_education_.levels_0.2.",
+  "Upper_secondary_and_post.secondary_non.tertiary_education_.levels_3_and_4._._vocational",
+  "Total_employment_.resident_population_concept_._LFS.",
+  "Distance_km",
+  "Borders_Ukraine",
+  "Country",
+  "A1",
+  "B1", "B2",
+  "C1", 
+  "D", "D3", "D4",
+  "E", "E3",
+  "F", "F3",
+  "G1"
+)
+
+# Step 2: Subset and impute numeric variables
+training_df_clean <- training_df %>%
+  select(all_of(selected_vars)) %>%
+  mutate(across(where(is.numeric), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
+
+prediction_vars <- setdiff(selected_vars, "Refugee_Flow")
+
+prediction_df_clean <- prediction_df %>%
+  select(all_of(prediction_vars)) %>%
+  mutate(across(where(is.numeric), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)))
+
+# Step 3: Train model
+set.seed(42)
+
+rf_model_clean <- ranger(
+  Refugee_Flow ~ .,
+  data = training_df_clean,
+  importance = "impurity",
+  num.trees = 500
+)
+
+# Step 4: Predict
+predicted_flows <- predict(rf_model_clean, data = prediction_df_clean)$predictions
+prediction_df_clean$Predicted_Refugee_Flow <- predicted_flows
+
+```
+
+```{r varimp_clean, fig.width=8, fig.height=6, out.width='0.9\\textwidth'}
+library(ggplot2)
+library(dplyr)
+
+# Compute importance for the cleaned model
+vi_clean <- as.data.frame(importance(rf_model_clean))
+vi_clean$Variable <- rownames(vi_clean)
+colnames(vi_clean)[1] <- "Importance"
+vi_clean <- vi_clean %>% arrange(desc(Importance))
+
+# Plot
+ggplot(vi_clean, aes(
+    x = reorder(Variable, Importance),
+    y = Importance
+  )) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Variable Importance (Updated Model)",
+    x = "Predictor",
+    y = "Impurity Importance"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0, face = "bold"),
+    axis.text.y = element_text(margin = margin(r = 5))
+  )
+
+
+
+
+
+```
+
+In fact, the model now better reflects: Accessibility (via Distance_km & Borders_Ukraine) , Opportunity (via Employment Rate, Wages, Education Levels) , Gravity (reflected in past flows and aggregated protection status), Safety / Governance (via assumed European standard of freedom). We must again consider that familiarity is not included in the model in any measurable way.
+
+The final Random Forest Model contains only the strongest performing variables from each domain, empirically, theoretically, and temporally. We moved from a bloated, macroeconomic-heavy predictor space to a streamlined feature set that still covers four of the five included pillars of refugee theory as well as a few freedom indicators. The Freedom House indicators used were handpicked not for their ability to represent state failure with longitudinal integrity. The final model produces cleaner importance signals and a more reliable platform for predictor importance, actual predictions, and policy insight.
+
+This design supports not just Ukraine-specific modeling, but extensibility to future crises where both pull and push variables must be integrated under time constraints and data scarcity.
+
+```{r,echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+# View ranked predictions (top countries likely to receive Ukrainian refugees)
+prediction_df_clean %>%
+  select(Country, Predicted_Refugee_Flow) %>%
+  arrange(desc(Predicted_Refugee_Flow)) %>%
+  head(10)
+
+```
+
+At this point, recall the model's target variable was not monthly flow, but rather the total number of Ukrainian refugees present in each country during a given month. This distinction is crucial. Rather than forecasting near-term spikes or border inflows, the model estimates cumulative refugee presence, the lasting footprint of displacement across Europe.
+
+Model Fit and Predictive Accuracy
+
+```{r}
+# If not already loaded
+library(ggplot2)
+library(dplyr)
+# Predict on the training data using the updated model
+training_predictions <- predict(rf_model_clean, data = training_df_clean)$predictions
+
+# --- Step 1: Compute R² and RMSE manually ---
+rss <- sum((training_predictions - training_df_clean$Refugee_Flow)^2)
+tss <- sum((training_df_clean$Refugee_Flow - mean(training_df_clean$Refugee_Flow))^2)
+r2_value <- 1 - rss / tss
+
+rmse_value <- sqrt(mean((training_predictions - training_df_clean$Refugee_Flow)^2))
+
+# --- Step 2: Create a data frame for plotting ---
+performance_df <- data.frame(
+  Actual = training_df_clean$Refugee_Flow,
+  Predicted = training_predictions
+)
+
+# --- Step 3: Plot Actual vs. Predicted Refugee Flow ---
+ggplot(performance_df, aes(x = Actual, y = Predicted)) +
+  geom_point(alpha = 0.3, color = "#2c7fb8") +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  labs(
+    title = "Actual vs. Predicted Refugee Flow (Updated Model)",
+    subtitle = paste0(
+      "R² = ", round(r2_value, 3),
+      ", RMSE = ", format(round(rmse_value), big.mark = ",")
+    ),
+    x = "Actual Refugee Flow",
+    y = "Predicted Refugee Flow"
+  ) +
+  theme_minimal()
+
+
+```
+
+The updated Random Forest Model achieved an R² of 0.982 and a root mean square error (RMSE) of 34,445. This RMSE, while seemingly large, is quite strong given that the dependent variable ranges into the millions for countries like Poland and Germany. In relative terms, the model's average error is less than 3% of the highest observed refugee counts, suggesting a tight fit and effective pattern recognition.
+
+The scatterplot of predicted vs. actual values shows near-perfect alignment in the low to mid-range, with mild overdispersion at the upper end of the scale. These deviations are acceptable given the heterogeneity of humanitarian policy and the lack of explicit policy ceilings encoded in the dataset. Overall, the model accurately captured the structural determinants of where refugees reside, not just where they arrive. Germany and Poland top the list, each with over 1.1 million projected Ukrainian refugees. This aligns with observed policy trends, diaspora concentration, and logistical proximity to Ukraine. Czechia, Romania, and Slovakia form the next tier, representing high-gravity secondary destinations. Italy, Hungary, and Spain round out the top ten, with the rest acting as capacity absorbers rather than frontline recipients.
+
+```{r}
+# Create prediction table: Top 10 *unique* countries by predicted refugee inflow
+library(dplyr)
+library(tidyr)
+library(knitr)
+library(kableExtra)
+
+# Step 1: Aggregate predictions
+country_predictions <- prediction_df_clean %>%
+  group_by(Country) %>%
+  summarise(Predicted_Refugee_Flow = max(Predicted_Refugee_Flow, na.rm = TRUE)) %>%
+  arrange(desc(Predicted_Refugee_Flow))
+
+# Step 2: Calculate rows per column (3 columns)
+n <- nrow(country_predictions)
+rows_per_col <- ceiling(n / 3)
+
+# Step 3: Pad to make the number of rows divisible by 3
+remainder <- n %% 3
+if (remainder != 0) {
+  padding <- 3 - remainder
+  pad_df <- tibble(Country = rep(NA, padding), Predicted_Refugee_Flow = rep(NA, padding))
+  country_predictions <- bind_rows(country_predictions, pad_df)
+  n <- n + padding  # update count
+}
+
+# Step 4: Assign column and row indices
+country_predictions <- country_predictions %>%
+  mutate(row_id = rep(1:rows_per_col, times = 3),
+         col_id = rep(1:3, each = rows_per_col))
+
+# Step 5: Pivot to wide format
+wide_table <- country_predictions %>%
+  pivot_wider(names_from = col_id, values_from = c(Country, Predicted_Refugee_Flow)) %>%
+  select(
+    Country_1, Predicted_Refugee_Flow_1,
+    Country_2, Predicted_Refugee_Flow_2,
+    Country_3, Predicted_Refugee_Flow_3
+  )
+
+# Step 6: Display with kable
+kable(wide_table,
+      caption = "Predicted Total Ukrainian Refugee Presence by Country",
+      col.names = c("Country", "Refugees",
+                    "Country", "Refugees",
+                    "Country", "Refugees"),
+      digits = 0) %>%
+  kable_styling(full_width = FALSE, font_size = 10, position = "center")
+
+
+```
+
+The decision to model total refugee presence rather than inflows offers notable conceptual and methodological strengths. Monthly inflow forecasting is unstable due to data volatility, policy reversals, and lagging indicators. Presence, by contrast, captures the cumulative footprint of displacement, offering a more policy-relevant and stable target. This shift elevates the model’s utility: housing, schooling, and medical planning hinge more on who stays than who arrives. Moreover, it reduces the noise introduced by short-term fluctuations and instead brings into focus the geographies where displacement has hardened into a structural reality. In this regard, the model reflects a more realistic and strategic lens through which long-term burden and infrastructure needs can be assessed.
+
+Empirically, the model demonstrates impressive performance. The final Random Forest Model achieves an R² of 0.982 and a root mean square error of just 34,445, less than 3% of the highest observed refugee counts. This tight fit is particularly notable given the wide range of refugee totals across countries and the policy heterogeneity embedded in the target region. The model accurately ranks countries by refugee burden, with Germany, Poland, and Czechia emerging as consistent high-gravity destinations. These rankings align well with both proximity and historical patterns of diasporic linkage, reinforcing confidence in the model's output. Importantly, the model was built after selecting variables that represent four pillars of refugee migration theory, accessibility, opportunity, gravity, and safety, thereby ensuring multidimensional validity.
+
+However, key limitations remain. First, the model does not include explicit policy ceiling variables, and thus assumes open-ended absorptive capacity in each country. This may overstate real-world capacity, particularly in nations with restrictive immigration policies or saturation-level strain on services. Second, while the model predicts presence, it does not account for onward migration or returns, nor does it capture dynamic feedback loops, such as how prior arrivals influence future flows. This makes it a cross-sectional snapshot rather than a reactive forecasting tool. The data was also unable to encapsulate existing welfare support provided by EU states. This is a notable limitation since an established correlation exists between developed welfare states and displaced populations. Additionally, the model's reliance on annualized indicators (like GDP, Freedom House scores) stratified into monthly rows introduces a lag that limits responsiveness to sudden within-year political or economic shocks. While this approach was necessary for harmonization across data sources, it sacrifices temporal granularity and may mute the impact of fast-moving events such as military escalations or asylum law reforms. The reality is that the model lags, and the biggest mitigating factor to that lag is the total population being the target variable.
+
+Compounding this is the fact that many datasets were originally structured for different analytical purposes and required significant preprocessing. The absence of harmonized real-time data forced repeated imputation and backward propagation of previous-year values to fill gaps. Some variables, such as governance indicators, showed low importance not due to conceptual irrelevance but due to collinearity or proxy saturation. Others, like geographic coordinates, under performed because more synthetic spatial features (e.g., distance to Kyiv) captured the relevant information more effectively. This reflects a broader challenge in migration modeling: theoretically important variables often provide limited marginal gain once higher-leverage proxies are introduced.
+
+# Conclusion
+
+The employed Random Forest Model demonstrates utility in identifying the most influential pull factors shaping Ukrainian refugee settlement patterns within the EU. While forecasting initial inflows is often unstable due to policy shifts, volatility, or data lag, modeling refugee presence offers a more stable and policy-relevant output. It reflects not just border crossings, but the enduring footprint of diaspora networks, where displaced populations ultimately remain, and where long-term support structures must follow.
+
+By focusing on total presence, this model excels not at capturing early-stage flight, but rather at characterizing late primary and sustained secondary migration, where refugees seek opportunity, not just safety. This distinction is vital. As a diaspora network solidifies, refugees become more responsive to structural conditions within host countries. The model leverages this reality and identifies which features shape that response most strongly.
+
+Across over 70 tested predictors, and after granulating for the top 29, the most important variables for predicting refugee presence were overwhelmingly economic and structural: labor force participation, imports and exports, GDP, and wages. These findings suggest that opportunity metrics, not border proximity alone, are what sustain and expand refugee communities after initial arrival. Distance to Kyiv and whether a country shares a border with Ukraine remained salient but fell behind opportunity variables in overall predictive leverage.
+
+Conversely, political freedom indicators from Freedom House consistently ranked among the least important predictors. While Ukraine's internal conditions undeniably drive initial displacement, they appear to play a minor role in shaping patterns in secondary migration. This supports the conclusion that once safety is broadly guaranteed, material and structural opportunity, not ideological freedom, determines movement. The culminating point is that political freedom metrics are significant indicators for primary migration, but socioeconomic factors in host countries are significantly more important when determining destinations of secondary migration.
+
+For policymakers, the implications are relatively straightforward. Countries aiming to retain or deter refugee populations should focus less on border management and more on economic signals. Those offering stable employment, higher education, and strong wage markets are more likely to retain refugees long term, regardless of geographic proximity. Finally, this project offers a replicable framework for rapid modeling during future crises. By integrating gravity-based logic with Random Forests, it balances interpretability and predictive strength, enabling both scholarly insight and real-world application. \clearpage
+
+# References
