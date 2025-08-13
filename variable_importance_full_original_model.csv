@@ -1,0 +1,70 @@
+Rank,Variable,Label,Importance,Scaled,Percent_of_Top
+1,Index..2015.100,Price Index (2015=100),1.8557687058167878e+17,1,100
+2,Percentage.of.population.in.the.labour.force..Non.Seasonal.Adjusted.,Labor Force Participation (%),94104506159662640,0.5070917828536396,50.71
+3,Imports_of_goods_and_services,Imports of Goods & Services,27194602248744496,0.14654090331141356,14.65
+4,Exports_of_goods_and_services,Exports of Goods & Services,16121329340579320,0.08687143656452471,8.69
+5,Gross_domestic_product_at_market_prices,GDP (Market Prices),15166195653035470,0.08172460073013411,8.17
+6,Final_consumption_expenditure,Final Consumption Expenditure,14882679811841566,0.08019684654231296,8.02
+7,Wages_and_salaries,Wages & Salaries,14864402456070072,0.08009835713620214,8.01
+8,Compensation_of_employees,Compensation of Employees,14428227899292246,0.07774798580269132,7.77
+9,Value_added._gross,Gross Value Added,14366895317957652,0.07741748889786502,7.74
+10,Upper_secondary._post.secondary_non.tertiary_and_tertiary_education_.levels_3.8.,Upper&Tertiary Educ. (Lvls 3–8),11404411855202780,0.06145384292480191,6.15
+11,Less_than_primary._primary_and_lower_secondary_education_.levels_0.2.,≤ Lower Secondary (Lvls 0–2),10337627015072648,0.05570536340369368,5.57
+12,Upper_secondary_and_post.secondary_non.tertiary_education_.levels_3_and_4.,Upper Secondary (Lvls 3–4),10100320439255204,0.054426612581602425,5.44
+13,Upper_secondary_and_post.secondary_non.tertiary_education_.levels_3_and_4._._vocational,Upper Secondary Vocational (Lvls 3–4),8109947595676178,0.043701284380192794,4.37
+14,Upper_secondary_and_post.secondary_non.tertiary_education_.levels_3_and_4._._general,Upper Secondary General (Lvls 3–4),7042948222574054,0.03795164882616236,3.8
+15,Total_employment_.resident_population_concept_._LFS.,Employment Rate (LFS),6286189777827615,0.03387377833306466,3.39
+16,Distance_km,Distance to Kyiv (km),53161081395894.586,2.8646393933287373e-4,0.03
+17,Capital,Capital City,52350021605109.6,2.8209346046747e-4,0.03
+18,Latitude,Latitude,32389683475624.457,1.7453513131297598e-4,0.02
+19,Longitude,Longitude,29190138594630.24,1.572940555745747e-4,0.02
+20,Country,Country Identifier,27866303339746.504,1.5016043353032824e-4,0.02
+21,Borders_Ukraine,Shares Border with Ukraine,16423480506488.865,8.849960911082572e-5,0.01
+22,Unit_of_measure,Unit_of_measure,5901348713254.682,3.18000227870924e-5,0
+23,Dataset.y,Dataset.y,5127377939738.857,2.7629401895114518e-5,0
+24,YearMonth,YearMonth,1386995341232.1414,7.473966647269638e-6,0
+25,PR,PR,340607729252.4825,1.8353996820016925e-6,0
+26,Year,Year,337966104167.3525,1.8211650143038809e-6,0
+27,Total,Total Population,301285573779.80176,1.623508214334262e-6,0
+28,B,B,268466203765.75964,1.4466576730401239e-6,0
+29,C1,FH: Expression & Belief,167346167418.35278,9.017619862530119e-7,0
+30,CL.rating,CL.rating,158091439991.92932,8.518919383455592e-7,0
+31,CL,CL,155307455605.54895,8.368901529525081e-7,0
+32,C,C,141965860748.34018,7.649976007427935e-7,0
+33,G,G,135689205996.47319,7.311752028750355e-7,0
+34,G1,FH: Control of Corruption,135067036374.97758,7.27822578059532e-7,0
+35,D4,FH: Org. Rights,124767836893.19199,6.723242853601056e-7,0
+36,PR.rating,PR.rating,120003803374.68399,6.466528021436065e-7,0
+37,B2,FH: Govt Functioning,116942321917.25662,6.301556953229593e-7,0
+38,E3,FH: Due Process,115129098649.24638,6.203849557780644e-7,0
+39,F,FH: Personal Autonomy (overall),111461836989.46074,6.006235402078436e-7,0
+40,F3,FH: Movement Rights,104372717032.337,5.624230902546607e-7,0
+41,B1,FH: Political Pluralism,100130030200.63579,5.39560937129636e-7,0
+42,E,FH: Rule of Law (overall),99252568286.1545,5.348326436104547e-7,0
+43,D,FH: Assoc. & Org. (overall),90024414171.54842,4.851057887191042e-7,0
+44,Dataset.x,Dataset.x,83302068125.16653,4.4888173760049705e-7,0
+45,Add.Q,Add.Q,72751878792.86478,3.920309603499007e-7,0
+46,D3,FH: Assoc. Rights,66877137589.27062,3.6037431485749557e-7,0
+47,A,A,63000335656.95868,3.394837700381959e-7,0
+48,A1,FH: Electoral Process,49859717448.70929,2.686742011136798e-7,0
+49,Class,Class,0,0,0
+50,Region,Region,0,0,0
+51,C.T,C.T,0,0,0
+52,Status,Status,0,0,0
+53,A2,A2,0,0,0
+54,A3,A3,0,0,0
+55,B3,B3,0,0,0
+56,B4,B4,0,0,0
+57,C2,C2,0,0,0
+58,C3,C3,0,0,0
+59,Add.A,Add.A,0,0,0
+60,D1,D1,0,0,0
+61,D2,D2,0,0,0
+62,E1,E1,0,0,0
+63,E2,E2,0,0,0
+64,F1,F1,0,0,0
+65,F2,F2,0,0,0
+66,F4,F4,0,0,0
+67,G2,G2,0,0,0
+68,G3,G3,0,0,0
+69,G4,G4,0,0,0
