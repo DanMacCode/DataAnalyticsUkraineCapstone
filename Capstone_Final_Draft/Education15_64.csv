@@ -1,0 +1,161 @@
+TIME,2020,2021,2022,2023,2024,Unit of measure,Class
+Belgium,25,22.7,21.7,22.5,22.5,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Bulgaria,21,20.5,19.6,18.7,17.2,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Czechia,12.3,12,12.3,13.4,13.5,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Denmark,25.9,25.5,25.8,25.6,24.2,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Germany,20,21.7,22.3,22.6,21.8,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Estonia,16.8,16.7,16.9,17.5,18.4,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Ireland,19.6,17.7,17.5,17.4,16.5,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Greece,24.3,23.5,22.7,22.4,21.8,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Spain,38.2,38.3,38.1,37.7,37,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+France,22.3,22.1,21.3,21.1,20.9,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Croatia,17.4,16.8,16,15.2,14.4,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Italy,39.5,39.2,38.8,36.7,35.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Cyprus,20.5,19.2,18.4,17.7,17.9,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Latvia,14.6,14.2,14.9,16,16.5,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Lithuania,10.8,10.9,11.3,11.6,11.9,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Luxembourg,27.2,25.1,24.2,23.7,22.8,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Hungary,19.6,19.1,18.6,18.1,17.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Malta,36.9,34,31.5,29.6,29.3,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Netherlands,24,23.6,23,23.6,23.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Austria,18.7,18.5,18.6,18.5,18.3,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Poland,12.9,12.9,12.7,12,11.8,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Portugal,45.4,42.6,41.5,41.1,38.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Romania,23.7,21.6,20.7,22.3,22.4,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Slovenia,14.5,13.3,13.8,16.4,16.2,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Slovakia,13.5,13.2,12.8,12.8,12.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Finland,15.9,18.2,18.1,18.5,18.7,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Sweden,20.7,20.2,19.5,19.2,19,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Iceland,27.6,24.8,25.3,23.8,23.1,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Norway,23.5,24.7,25,24.1,24,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Switzerland,16.2,17.5,18.6,18.5,18.6,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+United Kingdom,,,,,,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Montenegro,17.9,,,,,Percentage,"Less than primary, primary and lower secondary education (levels 0-2)"
+Belgium,75,77.3,78.3,77.5,77.5,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Bulgaria,79,79.5,80.4,81.3,82.8,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Czechia,87.7,88,87.7,86.6,86.5,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Denmark,74.1,74.5,74.2,74.4,75.8,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Germany,80,78.3,77.7,77.4,78.2,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Estonia,83.2,83.3,83.1,82.5,81.6,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Ireland,80.4,82.3,82.5,82.6,83.5,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Greece,75.7,76.5,77.3,77.6,78.2,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Spain,61.8,61.7,61.9,62.3,63,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+France,77.7,77.9,78.7,78.9,79.1,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Croatia,82.6,83.2,84,84.8,85.6,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Italy,60.5,60.8,61.2,63.3,64.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Cyprus,79.5,80.8,81.6,82.3,82.1,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Latvia,85.4,85.8,85.1,84,83.5,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Lithuania,89.2,89.1,88.7,88.4,88.1,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Luxembourg,72.8,74.9,75.8,76.3,77.2,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Hungary,80.4,80.9,81.4,81.9,82.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Malta,63.1,66,68.5,70.4,70.7,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Netherlands,76,76.4,77,76.4,76.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Austria,81.3,81.5,81.4,81.5,81.7,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Poland,87.1,87.1,87.3,88,88.2,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Portugal,54.6,57.4,58.5,58.9,61.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Romania,76.3,78.4,79.3,77.7,77.6,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Slovenia,85.5,86.7,86.2,83.6,83.8,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Slovakia,86.5,86.8,87.2,87.2,87.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Finland,84.1,81.8,81.9,81.5,81.3,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Sweden,79.3,79.8,80.5,80.8,81,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Iceland,72.4,75.2,74.7,76.2,76.9,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Norway,76.5,75.3,75,75.9,76,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Switzerland,83.8,82.5,81.4,81.5,81.4,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+United Kingdom,,,,,,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Montenegro,82.1,,,,,Percentage,"Upper secondary, post-secondary non-tertiary and tertiary education (levels 3-8)"
+Belgium,37.4,37.6,38,38.4,38.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Bulgaria,53.2,53.4,54.2,54.6,53.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Czechia,65.6,64.5,64.2,63.1,62.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Denmark,40.4,39.7,39.2,38.9,38.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Germany,52.8,50.2,49.6,48.7,48.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Estonia,48.1,47.3,46.5,46.5,45.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Ireland,37.6,36.9,36.5,36,35.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Greece,47.2,46.4,46.8,47.8,47.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Spain,25.8,25.5,25.4,25.2,25.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+France,42.4,41.6,41.8,41.3,40.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Croatia,60.3,60.9,61.1,60,59,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Italy,42.7,42.9,43.1,44.1,44.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Cyprus,38.5,38,37.6,36.3,35.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Latvia,52.2,51.6,50.6,50,48.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Lithuania,50.5,49.4,47.5,47.5,46.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Luxembourg,31.9,30.4,29.8,30.6,29,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Hungary,56.8,55.4,55.8,56.1,55.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Malta,34.9,36.4,39.1,39.7,37.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Netherlands,39.4,38.9,38.2,38,37.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Austria,50,49.8,48.8,47.9,47.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Poland,57.8,57.7,57.2,54.8,53.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Portugal,29.8,31.1,31.7,31.8,32.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Romania,60.1,62.1,62.2,61.6,61,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Slovenia,54,51.4,51.1,53.8,53.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Slovakia,62.6,62.1,61.2,61.5,61.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Finland,44.2,46.3,46,45.8,45.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Sweden,41.1,40.2,39.4,38.9,38.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Iceland,35.6,39.4,38.3,38.8,36.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Norway,37.7,34.7,33.9,33.9,33.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Switzerland,44.5,43.3,42.4,41.3,40.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+United Kingdom,,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Montenegro,60.3,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4)
+Belgium,,13.2,13.8,13.9,14.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Bulgaria,,25.7,26.2,26.2,25.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Czechia,,21,6.6,6.2,5.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Denmark,,12.1,12.1,12,11.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Germany,,7.1,7.5,7.2,7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Estonia,,20,19.2,18.7,18.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Ireland,,22.3,22,22.6,21.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Greece,,30.1,30,30.6,30.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Spain,,15.9,15.8,15.6,15.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+France,,12.7,12.8,12.6,12.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Croatia,,5.4,5.4,5.4,5.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Italy,,11.5,11.9,12.5,13.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Cyprus,,25.8,25.7,24.9,24.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Latvia,,22.8,22.8,23.2,22.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Lithuania,,21.4,20.2,19.7,20.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Luxembourg,,,,,0.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Hungary,,14.2,14.3,14.4,14.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Malta,,22,24,23,21.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Netherlands,,11.7,11.5,11.2,10.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Austria,,7.3,6.9,7.5,7.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Poland,,11.1,11,12.1,12.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Portugal,,20.5,20.8,20.1,22,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Romania,,8.8,8.8,8.6,4.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Slovenia,,7.1,6.9,5.9,6.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Slovakia,,5.7,5.6,5.6,5.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Finland,,10.4,10.9,10.9,10.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Sweden,,16.9,16.6,16.5,16.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Iceland,,19.2,18.3,19.3,17.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Norway,,12,12.1,12.6,12.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Switzerland,,9.8,9,9,9.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+United Kingdom,,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Montenegro,,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - general
+Belgium,,24.4,24.2,24.4,24.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Bulgaria,,27.7,28,28.4,27.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Czechia,,43.5,57.6,56.9,56.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Denmark,,27.6,27.1,26.9,26.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Germany,,43.1,42.1,41.5,41.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Estonia,,27.3,27.2,27.8,27.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Ireland,,13,13,12.1,11.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Greece,,16.4,16.8,17.2,16.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Spain,,9.6,9.6,9.7,9.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+France,,28.9,29,28.7,28.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Croatia,,55.5,55.7,54.6,53.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Italy,,31.4,31.1,31.6,31.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Cyprus,,12.1,11.8,11.4,11,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Latvia,,28.7,27.8,26.8,26,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Lithuania,,28,27.2,27.7,26.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Luxembourg,,30.4,29.8,30.6,28.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Hungary,,41.2,41.5,41.6,41.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Malta,,14.4,15.1,16.7,16.2,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Netherlands,,27.2,26.7,26.8,26.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Austria,,42.4,41.9,40.4,39.6,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Poland,,46.6,46.2,42.8,41.4,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Portugal,,10.6,10.9,11.7,10.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Romania,,53.2,53.4,53,56.9,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Slovenia,,44.3,44.2,47.9,47.1,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Slovakia,,56.4,55.6,55.8,55.8,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Finland,,35.9,35.1,34.9,35,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Sweden,,23.3,22.8,22.4,21.7,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Iceland,,19.2,18.7,18.1,18.5,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Norway,,22.7,21.7,21.3,21.3,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Switzerland,,33.5,33.4,32.3,31,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+United Kingdom,,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational
+Montenegro,,,,,,Percentage,Upper secondary and post-secondary non-tertiary education (levels 3 and 4) - vocational

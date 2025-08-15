@@ -1,0 +1,225 @@
+TIME,2020,2021,2022,2023,2024,Unit of measure,Class
+Belgium,463750.9,506047.2,563710.5,596202.7,613983.9,"Current prices, million euro",Gross domestic product at market prices
+Bulgaria,61912.5,71378.4,86082.4,94709.3,103723,"Current prices, million euro",Gross domestic product at market prices
+Czechia,220310.6,246012.3,286976.8,317385.8,318895.7,"Current prices, million euro",Gross domestic product at market prices
+Denmark,312118.3,345236,382309.3,376430,396960.1,"Current prices, million euro",Gross domestic product at market prices
+Germany,3449620,3676460,3953850,4185550,4305260,"Current prices, million euro",Gross domestic product at market prices
+Estonia,27859.3,31456.2,36442.8,38187.8,39510.1,"Current prices, million euro",Gross domestic product at market prices
+Ireland,382207.1,449216.5,520935.3,509951.8,533444.1,"Current prices, million euro",Gross domestic product at market prices
+Greece,167539.5,184574.6,207854.2,225196.9,237573.4,"Current prices, million euro",Gross domestic product at market prices
+Spain,1129214,1235474,1373629,1498324,1591627,"Current prices, million euro",Gross domestic product at market prices
+France,2318276.2,2508102.3,2653997.2,2826541.5,2919899.9,"Current prices, million euro",Gross domestic product at market prices
+Croatia,50720.9,58394.1,67611.5,78060.4,85609.8,"Current prices, million euro",Gross domestic product at market prices
+Italy,1670011.9,1842507.4,1998072.6,2131390,2192181.6,"Current prices, million euro",Gross domestic product at market prices
+Cyprus,22373.6,25679.9,29377.2,31340,33567.7,"Current prices, million euro",Gross domestic product at market prices
+Latvia,29224.3,32283.8,36099.7,39372.4,40208.4,"Current prices, million euro",Gross domestic product at market prices
+Lithuania,50264.6,56679.7,67455.5,73792.8,78409.8,"Current prices, million euro",Gross domestic product at market prices
+Hungary,138954.5,154971.7,169054.8,197902,206208.5,"Current prices, million euro",Gross domestic product at market prices
+Malta,14370.5,16677.3,18273,20545.9,22462.5,"Current prices, million euro",Gross domestic product at market prices
+Netherlands,816463,891550,993820,1050133,1122459,"Current prices, million euro",Gross domestic product at market prices
+Austria,380317.9,406232.1,448007.4,473226.7,484222.8,"Current prices, million euro",Gross domestic product at market prices
+Poland,531827.4,583001.4,661712.3,751931.7,845651.9,"Current prices, million euro",Gross domestic product at market prices
+Portugal,201032.7,216493.7,243957.1,267923.2,285180.6,"Current prices, million euro",Gross domestic product at market prices
+Romania,221075.5,242260.4,281761.4,324368.6,353821.1,"Current prices, million euro",Gross domestic product at market prices
+Slovenia,46738.7,52022.6,56908.8,63951.2,66968.1,"Current prices, million euro",Gross domestic product at market prices
+Slovakia,94320.6,101933.5,110046.4,123833.2,130985.1,"Current prices, million euro",Gross domestic product at market prices
+Finland,236387,248764,266135,272874,275963,"Current prices, million euro",Gross domestic product at market prices
+Sweden,478106.9,533953.6,547190.4,535176.8,559138.7,"Current prices, million euro",Gross domestic product at market prices
+Iceland,18948,21795.2,27292.3,29092.8,30918.6,"Current prices, million euro",Gross domestic product at market prices
+Liechtenstein,5618,6688.5,7011.9,7661,,"Current prices, million euro",Gross domestic product at market prices
+Norway,322823.8,425445.6,567468.3,446533.8,446866.1,"Current prices, million euro",Gross domestic product at market prices
+Switzerland,650742.6,689174.9,787386.5,826951.8,865619.7,"Current prices, million euro",Gross domestic product at market prices
+United Kingdom,,,,,,"Current prices, million euro",Gross domestic product at market prices
+Montenegro,4185.6,4955.1,5924,6963.6,7459.2,"Current prices, million euro",Gross domestic product at market prices
+Belgium,417994.9,452406.9,508390.3,538959.5,555550.5,"Current prices, million euro","Value added, gross"
+Bulgaria,53744.8,62465.7,76535.3,83042.4,90377.6,"Current prices, million euro","Value added, gross"
+Czechia,200921,224220.1,261260.4,291432.8,290930.9,"Current prices, million euro","Value added, gross"
+Denmark,271165.3,300996,337080.6,333780.7,352400.5,"Current prices, million euro","Value added, gross"
+Germany,3098997,3288243,3562822,3820854,3899573,"Current prices, million euro","Value added, gross"
+Estonia,24419.9,27521.8,32163.3,33685.2,34561.7,"Current prices, million euro","Value added, gross"
+Ireland,360059.1,424242.1,497529.7,484189.7,500059.5,"Current prices, million euro","Value added, gross"
+Greece,147236.3,161015.4,183408.7,196528.1,205920.3,"Current prices, million euro","Value added, gross"
+Spain,1030964,1118595,1252481,1367656,1449891,"Current prices, million euro","Value added, gross"
+France,2056545.2,2212764.4,2368609.4,2538450.4,2611095,"Current prices, million euro","Value added, gross"
+Croatia,41979.5,47880.3,56303.5,65124,70941.4,"Current prices, million euro","Value added, gross"
+Italy,1496321.9,1644016.4,1793606.6,1913567,1958459.6,"Current prices, million euro","Value added, gross"
+Cyprus,19958.6,22796.7,26032.4,27679.2,29678.6,"Current prices, million euro","Value added, gross"
+Latvia,25367,28062.2,31532.3,34586.7,35008.4,"Current prices, million euro","Value added, gross"
+Lithuania,44905,50519.8,61113.6,66444.8,70221.1,"Current prices, million euro","Value added, gross"
+Hungary,117436.9,131296.3,143759,171358.8,177298.9,"Current prices, million euro","Value added, gross"
+Malta,13157.8,15344.6,16961.1,19090.9,20769,"Current prices, million euro","Value added, gross"
+Netherlands,726149,791730,888174,944801,1007338,"Current prices, million euro","Value added, gross"
+Austria,340529.9,362537.3,401372.2,424979.6,433724.3,"Current prices, million euro","Value added, gross"
+Poland,469239,508282.2,590308.8,679422.1,751796.6,"Current prices, million euro","Value added, gross"
+Portugal,175104.3,187361.5,211027.9,233135.5,247506.3,"Current prices, million euro","Value added, gross"
+Romania,200437.6,218993.9,258682.9,296141.6,321170,"Current prices, million euro","Value added, gross"
+Slovenia,41139.2,45529.7,49959.9,56897.4,59253.7,"Current prices, million euro","Value added, gross"
+Slovakia,84655,91143.3,98176.8,113130.1,118553.5,"Current prices, million euro","Value added, gross"
+Finland,204507,215307,231139,238990,241374,"Current prices, million euro","Value added, gross"
+Sweden,423900.4,473274.1,485266.9,478096,500793.5,"Current prices, million euro","Value added, gross"
+Iceland,17053.9,19528,24512.8,26054.5,27513.8,"Current prices, million euro","Value added, gross"
+Liechtenstein,5430.5,6423.7,6758.6,,,"Current prices, million euro","Value added, gross"
+Norway,285154.2,383190.5,525399.6,406812.2,405923.7,"Current prices, million euro","Value added, gross"
+Switzerland,633067.1,669848.4,766372.1,805939.1,842968.5,"Current prices, million euro","Value added, gross"
+United Kingdom,,,,,,"Current prices, million euro","Value added, gross"
+Montenegro,3467.5,4021.5,4769.9,5583.9,5887.7,"Current prices, million euro","Value added, gross"
+Belgium,345437.9,372902,420161,448568.3,466554.3,"Current prices, million euro",Final consumption expenditure
+Bulgaria,47884.5,54832.8,65594.1,72119.2,80199.1,"Current prices, million euro",Final consumption expenditure
+Czechia,150975.1,167656.1,195601.5,212598.9,214922.9,"Current prices, million euro",Final consumption expenditure
+Denmark,223467.1,242221.7,251377.1,259822.4,268163.4,"Current prices, million euro",Final consumption expenditure
+Germany,2517814,2661024,2944908,3110779,3230624,"Current prices, million euro",Final consumption expenditure
+Estonia,19899.8,22064.9,26053.9,28313.9,29375.7,"Current prices, million euro",Final consumption expenditure
+Ireland,142740.3,158436.6,183566.2,205966.6,219082.9,"Current prices, million euro",Final consumption expenditure
+Greece,157239.1,166133.5,186352.4,198192.5,207115.4,"Current prices, million euro",Final consumption expenditure
+Spain,879177,953000,1050308,1124771,1197616,"Current prices, million euro",Final consumption expenditure
+France,1829584.2,1950423.2,2088896.4,2226912.1,2301312.3,"Current prices, million euro",Final consumption expenditure
+Croatia,42317.3,47270.9,54191.1,61307.9,68508.5,"Current prices, million euro",Final consumption expenditure
+Italy,1312447.1,1399524.9,1542921.3,1612274.3,1651960,"Current prices, million euro",Final consumption expenditure
+Cyprus,18060.6,19431,22361.3,24542.9,26006.4,"Current prices, million euro",Final consumption expenditure
+Latvia,22330.1,25004.2,29123.8,31158.5,32733.6,"Current prices, million euro",Final consumption expenditure
+Lithuania,37400.6,41779.6,49928.2,54726.3,58343.1,"Current prices, million euro",Final consumption expenditure
+Hungary,97920.2,106865.2,118789.8,137619.1,146054.4,"Current prices, million euro",Final consumption expenditure
+Malta,8917,9939.6,11222.5,13001.8,14364.8,"Current prices, million euro",Final consumption expenditure
+Netherlands,558446,606798,679345,734860,777914,"Current prices, million euro",Final consumption expenditure
+Austria,269644,290307.4,320312.7,344045.7,361393.3,"Current prices, million euro",Final consumption expenditure
+Poland,401805.8,437179.1,504600.8,575934.2,662463.4,"Current prices, million euro",Final consumption expenditure
+Portugal,166008.9,177182.6,197671.8,209979,222724.7,"Current prices, million euro",Final consumption expenditure
+Romania,177299.7,192278.2,225219.2,256290.3,289424,"Current prices, million euro",Final consumption expenditure
+Slovenia,33098.4,37598.2,42018.7,45642.1,48390.5,"Current prices, million euro",Final consumption expenditure
+Slovakia,74240.4,79177.1,91066.7,97418.8,104426.6,"Current prices, million euro",Final consumption expenditure
+Finland,176491,186965,198823,210343,213091,"Current prices, million euro",Final consumption expenditure
+Sweden,341746.4,378413.7,391601.3,385141.6,401387.7,"Current prices, million euro",Final consumption expenditure
+Iceland,15163.9,17207.1,20725.4,21627.5,23058.3,"Current prices, million euro",Final consumption expenditure
+Liechtenstein,,,,,,"Current prices, million euro",Final consumption expenditure
+Norway,224624.5,255531.4,286186,269193.2,278149.9,"Current prices, million euro",Final consumption expenditure
+Switzerland,416580.1,424685,483485.4,518222.1,543518.5,"Current prices, million euro",Final consumption expenditure
+United Kingdom,,,,,,"Current prices, million euro",Final consumption expenditure
+Montenegro,4345.7,4593.7,5481.4,6339.8,7022.2,"Current prices, million euro",Final consumption expenditure
+Belgium,367276.2,453546.6,536875.6,501887.2,486397.5,"Current prices, million euro",Exports of goods and services
+Bulgaria,34933.5,44126.6,60238,58611.2,57884.9,"Current prices, million euro",Exports of goods and services
+Czechia,149284.6,173561.8,207798.3,218926.2,220801.3,"Current prices, million euro",Exports of goods and services
+Denmark,171780.2,203086.5,269713.3,255820.5,276788.3,"Current prices, million euro",Exports of goods and services
+Germany,1351188,1568289,1810093,1816627,1799605,"Current prices, million euro",Exports of goods and services
+Estonia,18987.4,25022.2,31582.7,29732.1,30135.2,"Current prices, million euro",Exports of goods and services
+Ireland,517748.8,597705.4,712037.6,688731.8,787239.9,"Current prices, million euro",Exports of goods and services
+Greece,52691.9,74310.5,101889.9,98429.6,99731.9,"Current prices, million euro",Exports of goods and services
+Spain,344196,417060,546088,570251,593562,"Current prices, million euro",Exports of goods and services
+France,662035.3,784736.3,971788.9,973920.4,989546.9,"Current prices, million euro",Exports of goods and services
+Croatia,20936.1,29068.4,40226.8,41314.3,42569.7,"Current prices, million euro",Exports of goods and services
+Italy,479725.2,574339.2,701306.3,714756.6,717563.7,"Current prices, million euro",Exports of goods and services
+Cyprus,17820,23306.5,31028.7,30449.3,32457.1,"Current prices, million euro",Exports of goods and services
+Latvia,18311.8,21569.2,27969.3,26167.1,25983.3,"Current prices, million euro",Exports of goods and services
+Lithuania,36409,45134,58537.8,56431.5,58112.6,"Current prices, million euro",Exports of goods and services
+Hungary,108500.3,123079.6,151309.3,159974.4,153963.1,"Current prices, million euro",Exports of goods and services
+Malta,19549.2,19792.8,23490.7,25610.9,27665,"Current prices, million euro",Exports of goods and services
+Netherlands,663307,770745,958476,918720,925247,"Current prices, million euro",Exports of goods and services
+Austria,196484,227300.5,277597.4,281402.2,276613.4,"Current prices, million euro",Exports of goods and services
+Poland,278857.8,332532.2,412594.3,435227.7,442520.8,"Current prices, million euro",Exports of goods and services
+Portugal,74896.8,89949.7,120714.1,127280.8,132525.9,"Current prices, million euro",Exports of goods and services
+Romania,81277.3,98068,122175,126997.4,125946.8,"Current prices, million euro",Exports of goods and services
+Slovenia,36583.2,43687.2,53484.4,53240.1,54602.3,"Current prices, million euro",Exports of goods and services
+Slovakia,79510.7,92478.7,108935.1,113032,111629.5,"Current prices, million euro",Exports of goods and services
+Finland,85606,99311,123180,116761,115601,"Current prices, million euro",Exports of goods and services
+Sweden,211741,253543.8,297190.4,295395.5,302895.6,"Current prices, million euro",Exports of goods and services
+Iceland,6311.5,8141.2,12502,12638.4,12858.7,"Current prices, million euro",Exports of goods and services
+Liechtenstein,,,,,,"Current prices, million euro",Exports of goods and services
+Norway,103982.6,183096,314943.9,213943.7,212224.4,"Current prices, million euro",Exports of goods and services
+Switzerland,417097.1,490135.9,599514.3,606429.9,624622.1,"Current prices, million euro",Exports of goods and services
+United Kingdom,,,,,,"Current prices, million euro",Exports of goods and services
+Montenegro,1088.1,2122.5,3052.8,3478.4,3347.2,"Current prices, million euro",Exports of goods and services
+Belgium,360581.4,444089.5,545107.2,505462.9,486478.1,"Current prices, million euro",Imports of goods and services
+Bulgaria,33370.8,42353.6,59279,54725.7,55472.8,"Current prices, million euro",Imports of goods and services
+Czechia,134432.4,164405.3,205481.3,203060.2,199871.2,"Current prices, million euro",Imports of goods and services
+Denmark,154175.6,181554.8,233188.3,225138.7,233873.1,"Current prices, million euro",Imports of goods and services
+Germany,1166802,1378637,1711369,1648971,1630646,"Current prices, million euro",Imports of goods and services
+Estonia,19289.2,25431.9,32033.3,29405.2,29912.3,"Current prices, million euro",Imports of goods and services
+Ireland,438183.6,410421.2,497207,520954.9,562175.9,"Current prices, million euro",Imports of goods and services
+Greece,65078,88138.5,121925.9,109103.5,112460.6,"Current prices, million euro",Imports of goods and services
+Spain,327078,404834,533963,511415,525432,"Current prices, million euro",Imports of goods and services
+France,702012.7,815144.1,1044267.2,1022356.9,999144,"Current prices, million euro",Imports of goods and services
+Croatia,24476.1,30673.7,44432.2,42744.6,45234.7,"Current prices, million euro",Imports of goods and services
+Italy,421070.6,536729.2,737635.7,684306.2,667370.9,"Current prices, million euro",Imports of goods and services
+Cyprus,18127.4,22102.7,29967.8,30121.1,31254,"Current prices, million euro",Imports of goods and services
+Latvia,17892.3,22593.9,29734,27628.2,27012.8,"Current prices, million euro",Imports of goods and services
+Lithuania,31848.6,42610,59948.9,53550.8,54051.3,"Current prices, million euro",Imports of goods and services
+Hungary,105900.2,122906.7,159426.9,150943.1,142518.3,"Current prices, million euro",Imports of goods and services
+Malta,17284.5,17051.3,21032.8,22162.1,23808.1,"Current prices, million euro",Imports of goods and services
+Netherlands,579621,683862,871221,814319,801439,"Current prices, million euro",Imports of goods and services
+Austria,183637,223748.2,279649.7,271392.5,262882.2,"Current prices, million euro",Imports of goods and services
+Poland,249029.3,313866.4,401453,392084.8,408629.1,"Current prices, million euro",Imports of goods and services
+Portugal,78910.6,95961.1,126570.9,124202.1,127512.2,"Current prices, million euro",Imports of goods and services
+Romania,90992.8,111761.9,141614.4,142520.6,147528,"Current prices, million euro",Imports of goods and services
+Slovenia,32379.3,40632.5,52490.9,49144.9,50191.1,"Current prices, million euro",Imports of goods and services
+Slovakia,78508.5,92943.2,115481.5,111147.7,111365.4,"Current prices, million euro",Imports of goods and services
+Finland,85029,99176,128484,116699,114436,"Current prices, million euro",Imports of goods and services
+Sweden,192137.9,232942.6,288914.8,280560.2,287505.2,"Current prices, million euro",Imports of goods and services
+Iceland,6568.4,8565.4,12628,12593.7,13212.5,"Current prices, million euro",Imports of goods and services
+Liechtenstein,,,,,,"Current prices, million euro",Imports of goods and services
+Norway,106995.6,119917.8,153838.7,144908,151361.6,"Current prices, million euro",Imports of goods and services
+Switzerland,375416.1,405903.6,491021.6,512601.3,536132,"Current prices, million euro",Imports of goods and services
+United Kingdom,,,,,,"Current prices, million euro",Imports of goods and services
+Montenegro,2553.6,3081.9,4405.4,4776.4,5038.7,"Current prices, million euro",Imports of goods and services
+Belgium,230892.4,245676.8,269152,292661.1,301623.3,"Current prices, million euro",Compensation of employees
+Bulgaria,27904.3,31356.8,35946.2,41375.2,46100.4,"Current prices, million euro",Compensation of employees
+Czechia,99187.4,109727,123392.1,136048.1,137927.4,"Current prices, million euro",Compensation of employees
+Denmark,162376.9,171849.4,183565.3,191829.7,201861.1,"Current prices, million euro",Compensation of employees
+Germany,1894056,1963032,2081653,2223568,2350171,"Current prices, million euro",Compensation of employees
+Estonia,13814.7,15058.8,17133,18995.6,19918,"Current prices, million euro",Compensation of employees
+Ireland,106103,117272.1,128590.6,142550.4,152046.7,"Current prices, million euro",Compensation of employees
+Greece,65290.2,70113.9,73551.2,77454.3,83216.7,"Current prices, million euro",Compensation of employees
+Spain,561866,604193,655862,715607,770480,"Current prices, million euro",Compensation of employees
+France,1195011.5,1285635.5,1378355.4,1449256.1,1502873.7,"Current prices, million euro",Compensation of employees
+Croatia,24852.5,26607.4,30408.7,36037.2,42577.7,"Current prices, million euro",Compensation of employees
+Italy,677961.2,738220.6,783597.5,823519.9,866056.4,"Current prices, million euro",Compensation of employees
+Cyprus,10572.1,11408,12776.5,13638,14611.2,"Current prices, million euro",Compensation of employees
+Latvia,15015.5,15869.1,17872.2,20680.3,22281,"Current prices, million euro",Compensation of employees
+Lithuania,23825.7,26970.5,31411.2,35776.3,39785.4,"Current prices, million euro",Compensation of employees
+Hungary,58348.4,63003.6,68620.2,81380.5,88674,"Current prices, million euro",Compensation of employees
+Malta,6445.4,6923.7,7631.9,8365.4,9377.1,"Current prices, million euro",Compensation of employees
+Netherlands,406330,423799,454769,489436,525311,"Current prices, million euro",Compensation of employees
+Austria,192083.9,201416.4,217424,234829.5,254753.3,"Current prices, million euro",Compensation of employees
+Poland,215341.4,225911.5,249983.6,294217.1,350040.2,"Current prices, million euro",Compensation of employees
+Portugal,96895,103756.2,113604.2,126231.1,137661.8,"Current prices, million euro",Compensation of employees
+Romania,86956.3,91300.6,105170,122261.1,144302.9,"Current prices, million euro",Compensation of employees
+Slovenia,25114.3,27424.8,29534.5,32713.9,34687.3,"Current prices, million euro",Compensation of employees
+Slovakia,41052.7,43455.9,46722.8,51616.1,55199.2,"Current prices, million euro",Compensation of employees
+Finland,110869,118106,126139,132413,133829,"Current prices, million euro",Compensation of employees
+Sweden,233371.4,256388.4,259085.2,255918.2,268815.7,"Current prices, million euro",Compensation of employees
+Iceland,10289.1,11670.5,14321.7,15370.6,16469.2,"Current prices, million euro",Compensation of employees
+Liechtenstein,3526.8,3749.2,4145.5,,,"Current prices, million euro",Compensation of employees
+Norway,162035,181438.3,197893.2,188584.7,195760.6,"Current prices, million euro",Compensation of employees
+Switzerland,387678.9,400689.2,455482,487327,512555.1,"Current prices, million euro",Compensation of employees
+United Kingdom,,,,,,"Current prices, million euro",Compensation of employees
+Montenegro,1879.3,2010.8,2377.1,2900.5,,"Current prices, million euro",Compensation of employees
+Belgium,171630.2,183769.9,201841.2,219911.3,226745,"Current prices, million euro",Wages and salaries
+Bulgaria,23752.1,26745.2,30764.9,35479.2,39077.5,"Current prices, million euro",Wages and salaries
+Czechia,75140.4,83145.8,94669.9,104355.9,106029.5,"Current prices, million euro",Wages and salaries
+Denmark,149095.2,157788.4,168951.2,176756.1,185925.3,"Current prices, million euro",Wages and salaries
+Germany,1557420,1616289,1714342,1841505,1948435,"Current prices, million euro",Wages and salaries
+Estonia,10368.4,11322.5,12896,14304,14996.3,"Current prices, million euro",Wages and salaries
+Ireland,89737.7,98776.2,108550.2,121257.1,129346.6,"Current prices, million euro",Wages and salaries
+Greece,50560.7,54374.7,57405.8,60941.4,65465.7,"Current prices, million euro",Wages and salaries
+Spain,430917,466521,509985,554912,596972,"Current prices, million euro",Wages and salaries
+France,877340.9,946416.5,1020599.8,1074285.8,1108521.7,"Current prices, million euro",Wages and salaries
+Croatia,21787.3,23203.3,26555.2,31602.7,37296.1,"Current prices, million euro",Wages and salaries
+Italy,495090.8,540179.1,574543.4,603711,635393,"Current prices, million euro",Wages and salaries
+Cyprus,8572.5,9280.9,10478.2,11163,11941.4,"Current prices, million euro",Wages and salaries
+Latvia,12290.9,12967,14596.8,16978.9,18263.5,"Current prices, million euro",Wages and salaries
+Lithuania,23003.8,26041,30308.8,34526,38402.4,"Current prices, million euro",Wages and salaries
+Hungary,50792.4,55402.6,61498.9,73084.9,79690,"Current prices, million euro",Wages and salaries
+Malta,5927,6351.8,7017.3,7703.3,8650.2,"Current prices, million euro",Wages and salaries
+Netherlands,314084,327960,348914,377681,405129,"Current prices, million euro",Wages and salaries
+Austria,158445.5,166302,179804.7,194787.1,211389.6,"Current prices, million euro",Wages and salaries
+Poland,181671.8,191214.8,211801.9,248585,297506.2,"Current prices, million euro",Wages and salaries
+Portugal,75387.7,80458.9,88831.1,98894,107916,"Current prices, million euro",Wages and salaries
+Romania,83031.9,87056.5,100508.2,116886.2,138016.7,"Current prices, million euro",Wages and salaries
+Slovenia,21506.6,23484.5,25355.7,28123.4,29814.2,"Current prices, million euro",Wages and salaries
+Slovakia,31060.8,32777.2,35368.8,38921.4,41053.2,"Current prices, million euro",Wages and salaries
+Finland,93232,98284,104901,110145,112287,"Current prices, million euro",Wages and salaries
+Sweden,194269.9,213147.9,217079.5,211371.2,220350.9,"Current prices, million euro",Wages and salaries
+Iceland,8233.1,9360.7,11462.1,12300.4,13177.7,"Current prices, million euro",Wages and salaries
+Liechtenstein,2996.5,3198.9,3526,,,"Current prices, million euro",Wages and salaries
+Norway,129754,144851.5,157404,148317.1,154180.7,"Current prices, million euro",Wages and salaries
+Switzerland,321926.6,334944.7,381258.2,409768.7,431309.2,"Current prices, million euro",Wages and salaries
+United Kingdom,,,,,,"Current prices, million euro",Wages and salaries
+Montenegro,,,,,,"Current prices, million euro",Wages and salaries

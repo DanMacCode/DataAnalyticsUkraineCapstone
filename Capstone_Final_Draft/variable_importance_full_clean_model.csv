@@ -1,0 +1,30 @@
+Rank,Variable,Label,Importance,Scaled,Percent_of_Top
+1,Distance_km,Distance to Kyiv (km),99519302779116.64,1,100
+2,Country,Country Identifier,55366293373437.664,0.5563372313441876,55.63
+3,Percentage.of.population.in.the.labour.force..Non.Seasonal.Adjusted.,Labor Force Participation (%),34553525198739.375,0.3472042531832344,34.72
+4,Borders_Ukraine,Shares Border with Ukraine,23617250581435.152,0.2373132640795696,23.73
+5,Upper_secondary_and_post.secondary_non.tertiary_education_.levels_3_and_4._._vocational,Upper Secondary Vocational (Lvls 3–4),18951583899240.434,0.19043123665469727,19.04
+6,Less_than_primary._primary_and_lower_secondary_education_.levels_0.2.,≤ Lower Secondary (Lvls 0–2),15008307899281.824,0.15080800890047233,15.08
+7,Value_added._gross,Gross Value Added,14044993616007.117,0.1411283361498223,14.11
+8,Upper_secondary._post.secondary_non.tertiary_and_tertiary_education_.levels_3.8.,Upper&Tertiary Educ. (Lvls 3–8),13893760574195.174,0.13960870088722802,13.96
+9,Total_employment_.resident_population_concept_._LFS.,Employment Rate (LFS),13087384804024.48,0.1315059936972425,13.15
+10,Exports_of_goods_and_services,Exports of Goods & Services,12592086211270.527,0.1265290839026344,12.65
+11,Final_consumption_expenditure,Final Consumption Expenditure,12255909406510.016,0.12315107787392802,12.32
+12,Imports_of_goods_and_services,Imports of Goods & Services,11950332145211.313,0.12008054529617342,12.01
+13,Gross_domestic_product_at_market_prices,GDP (Market Prices),11013084281523.605,0.11066279579919461,11.07
+14,Wages_and_salaries,Wages & Salaries,9859558074906.543,0.09907181621629584,9.91
+15,Compensation_of_employees,Compensation of Employees,9790956402963.164,0.09838248590521396,9.84
+16,Index..2015.100,Price Index (2015=100),7733311751295.208,0.0777066512258362,7.77
+17,Total,Total Population,1225370749935.7676,0.012312895244608789,1.23
+18,B2,FH: Govt Functioning,693768714022.4875,0.006971197492835225,0.7
+19,B1,FH: Political Pluralism,583352102092.3514,0.005861698040500776,0.59
+20,F,FH: Personal Autonomy (overall),526409487864.76794,0.005289521461310226,0.53
+21,F3,FH: Movement Rights,497672710442.4228,0.005000765645906993,0.5
+22,D,FH: Assoc. & Org. (overall),475228914460.72614,0.004775243607920947,0.48
+23,E,FH: Rule of Law (overall),469942558075.23505,0.004722124702966155,0.47
+24,D4,FH: Org. Rights,468233480902.323,0.004704951379548634,0.47
+25,D3,FH: Assoc. Rights,456643322181.17773,0.00458848996555672,0.46
+26,A1,FH: Electoral Process,450386997638.7714,0.00452562452772008,0.45
+27,E3,FH: Due Process,415155253285.5582,0.0041716053237128925,0.42
+28,C1,FH: Expression & Belief,413052455234.68066,0.004150475774046083,0.42
+29,G1,FH: Control of Corruption,403780833912.377,0.0040573117238227605,0.41
